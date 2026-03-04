@@ -3,10 +3,1054 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Insurance Claim Letter Generator - Free India</title>
-<meta name="description" content="Generate a professional health insurance claim rejection dispute letter instantly. Free tool for Indian patients. Download PDF.">
+<title>Health Insurance Claim Letter Generator — Free India | Dispute Rejection Instantly</title>
+<meta name="description" content="Generate a professional health insurance claim rejection dispute letter instantly. Free tool for Indian patients. Works for Star Health, HDFC Ergo, LIC, Bajaj Allianz and all insurers. Download PDF free.">
+<meta name="keywords" content="health insurance claim letter, insurance rejection dispute India, claim reimbursement letter, insurance complaint letter India, free PDF generator">
+<meta property="og:title" content="Health Insurance Claim Letter Generator — Free India">
+<meta property="og:description" content="Fight your insurance rejection in minutes. Generate a legally-worded dispute letter for free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root {
+  --ink: #0f0f0f;
+  --paper: #faf8f3;
+  --cream: #f2ede2;
+  --gold: #c9a84c;
+  --gold-light: #e8d5a3;
+  --red: #c0392b;
+  --green: #1a6b3c;
+  --blue: #1a4480;
+  --muted: #6b6560;
+  --border: #ddd8cc;
+  --shadow: 0 4px 24px rgba(15,15,15,0.08);
+  --shadow-lg: 0 20px 60px rgba(15,15,15,0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--ink);
+  color: white;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--gold);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--gold); }
+.header-badge {
+  background: var(--green);
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  color: white;
+  padding: 70px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0; right: 0;
+  height: 40px;
+  background: var(--paper);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  font-weight: 300;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px;
+}
+.trust-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.trust-item .icon { font-size: 1rem; }
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── FORM ── */
+.form-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.form-section {
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+}
+.form-section:last-child { border-bottom: none; }
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.section-num {
+  width: 28px;
+  height: 28px;
+  background: var(--ink);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.form-grid.full { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.field input, .field select, .field textarea {
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.93rem;
+  color: var(--ink);
+  background: var(--paper);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+  background: white;
+}
+.field textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+.field select { cursor: pointer; }
+
+/* ── REASON PILLS ── */
+.reason-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.reason-pill {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: 0.15s;
+  text-align: left;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+.reason-pill:hover { border-color: var(--gold); background: white; }
+.reason-pill.active {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  color: #7a5c1e;
+  font-weight: 600;
+}
+
+/* ── GENERATE BUTTON ── */
+.generate-section {
+  padding: 24px 32px;
+  background: var(--ink);
+}
+.generate-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--gold), #a8832a);
+  color: var(--ink);
+  border: none;
+  border-radius: 12px;
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: -0.3px;
+}
+.generate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+.generate-btn:active { transform: translateY(0); }
+
+/* ── SIDEBAR ── */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+.info-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.info-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.step-list { display: flex; flex-direction: column; gap: 12px; }
+.step-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.step-dot {
+  width: 22px;
+  height: 22px;
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.insurer-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.insurer-tag {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.warning-card {
+  background: #fff8e6;
+  border: 1px solid #f0d080;
+  border-radius: 16px;
+  padding: 18px 20px;
+  font-size: 0.83rem;
+  color: #7a5c1e;
+  line-height: 1.6;
+}
+.warning-card strong { display: block; margin-bottom: 6px; font-size: 0.88rem; }
+
+/* ── LETTER PREVIEW ── */
+#letter-preview {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+}
+.letter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.letter-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.letter-actions { display: flex; gap: 10px; }
+.btn-download {
+  padding: 10px 22px;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-download:hover { background: #333; transform: translateY(-1px); }
+.btn-copy {
+  padding: 10px 22px;
+  background: white;
+  color: var(--ink);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-copy:hover { border-color: var(--ink); }
+
+.letter-paper {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 60px;
+  box-shadow: var(--shadow-lg);
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #111;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* ── FAQ ── */
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+}
+.faq-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: white;
+}
+.faq-q {
+  padding: 18px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  user-select: none;
+}
+.faq-q:hover { background: var(--cream); }
+.faq-a {
+  display: none;
+  padding: 0 22px 18px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-arrow { transition: transform 0.2s; font-size: 0.75rem; color: var(--muted); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 32px 40px;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+footer strong { color: rgba(255,255,255,0.8); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease forwards; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; padding: 30px 20px; }
+  .hero { padding: 50px 20px 70px; }
+  header { padding: 0 20px; }
+  .trust-bar { padding: 12px 20px; }
+  .trust-inner { gap: 16px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .reason-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
+  #letter-preview { padding: 0 20px; }
+  .letter-paper { padding: 30px 24px; }
+  .faq-section { padding: 0 20px; }
+  .form-section { padding: 22px 20px; }
+  .generate-section { padding: 20px; }
+}
+</style>
 </head>
 <body>
-<h1>Coming Soon</h1>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">India<span>Tools</span>.in</div>
+    <div class="header-badge">✓ 100% Free</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">⚖️ Legal Document Generator</div>
+    <h1>Fight Your Insurance<br><em>Rejection</em> in Minutes</h1>
+    <p class="hero-sub">Generate a professionally worded health insurance claim dispute letter — for free. Works for all Indian insurers. No lawyer needed.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">2 Min</div><div class="stat-label">To Generate</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free Forever</div></div>
+      <div class="stat"><div class="stat-num">All</div><div class="stat-label">Insurers Covered</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="icon">🏛️</span> Based on IRDAI Guidelines</div>
+    <div class="trust-item"><span class="icon">🔒</span> No Data Stored</div>
+    <div class="trust-item"><span class="icon">📄</span> PDF Download Free</div>
+    <div class="trust-item"><span class="icon">🇮🇳</span> Made for India</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- FORM -->
+  <div class="form-card">
+
+    <!-- Section 1: Your Details -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">1</div>
+        <div class="section-title">Your Personal Details</div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Full Name *</label>
+          <input type="text" id="patientName" placeholder="Rajesh Kumar Sharma">
+        </div>
+        <div class="field">
+          <label>Policy Number *</label>
+          <input type="text" id="policyNumber" placeholder="POL/2024/123456">
+        </div>
+        <div class="field">
+          <label>Mobile Number</label>
+          <input type="tel" id="mobile" placeholder="9876543210">
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="rajesh@gmail.com">
+        </div>
+        <div class="field" style="grid-column: 1/-1">
+          <label>Your Full Address *</label>
+          <input type="text" id="address" placeholder="Flat 4B, Sunshine Apartments, Andheri West, Mumbai - 400053">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Insurance Details -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">2</div>
+        <div class="section-title">Insurance Company Details</div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Insurance Company *</label>
+          <select id="insurerName">
+            <option value="">Select Insurer</option>
+            <option>Star Health and Allied Insurance</option>
+            <option>HDFC ERGO General Insurance</option>
+            <option>ICICI Lombard General Insurance</option>
+            <option>Bajaj Allianz General Insurance</option>
+            <option>New India Assurance</option>
+            <option>United India Insurance</option>
+            <option>National Insurance Company</option>
+            <option>Oriental Insurance Company</option>
+            <option>Niva Bupa Health Insurance</option>
+            <option>Care Health Insurance</option>
+            <option>Aditya Birla Health Insurance</option>
+            <option>Tata AIG General Insurance</option>
+            <option>Reliance General Insurance</option>
+            <option>LIC of India</option>
+            <option>SBI General Insurance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Claim Reference Number</label>
+          <input type="text" id="claimNumber" placeholder="CLM/2024/789012">
+        </div>
+        <div class="field">
+          <label>Date of Rejection Letter</label>
+          <input type="date" id="rejectionDate">
+        </div>
+        <div class="field">
+          <label>Claim Amount (₹) *</label>
+          <input type="number" id="claimAmount" placeholder="75000">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Hospitalisation Details -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">3</div>
+        <div class="section-title">Hospitalisation Details</div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Hospital Name *</label>
+          <input type="text" id="hospitalName" placeholder="Kokilaben Dhirubhai Ambani Hospital">
+        </div>
+        <div class="field">
+          <label>City</label>
+          <input type="text" id="hospitalCity" placeholder="Mumbai">
+        </div>
+        <div class="field">
+          <label>Admission Date</label>
+          <input type="date" id="admissionDate">
+        </div>
+        <div class="field">
+          <label>Discharge Date</label>
+          <input type="date" id="dischargeDate">
+        </div>
+        <div class="field" style="grid-column: 1/-1">
+          <label>Diagnosis / Medical Condition *</label>
+          <input type="text" id="diagnosis" placeholder="Acute Appendicitis requiring emergency surgery">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Reason for Rejection -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">4</div>
+        <div class="section-title">Why Did They Reject Your Claim?</div>
+      </div>
+      <div class="reason-grid" id="reasonGrid">
+        <button class="reason-pill" onclick="selectReason(this, 'pre-existing')">🏥 Pre-existing Condition</button>
+        <button class="reason-pill" onclick="selectReason(this, 'not-covered')">📋 Treatment Not Covered</button>
+        <button class="reason-pill" onclick="selectReason(this, 'waiting-period')">⏳ Waiting Period</button>
+        <button class="reason-pill" onclick="selectReason(this, 'documents')">📄 Incomplete Documents</button>
+        <button class="reason-pill" onclick="selectReason(this, 'non-disclosure')">🚫 Non-Disclosure</button>
+        <button class="reason-pill" onclick="selectReason(this, 'experimental')">🔬 Experimental Treatment</button>
+        <button class="reason-pill" onclick="selectReason(this, 'network-hospital')">🏨 Non-Network Hospital</button>
+        <button class="reason-pill" onclick="selectReason(this, 'other')">✏️ Other Reason</button>
+      </div>
+      <input type="hidden" id="rejectionReason" value="">
+      <div class="field" style="margin-top:14px">
+        <label>Additional Details (What exactly did they say?)</label>
+        <textarea id="rejectionDetails" placeholder="e.g. They said my surgery was for a pre-existing condition but I was never diagnosed before. The doctor confirmed it was an acute emergency..."></textarea>
+      </div>
+    </div>
+
+    <!-- Section 5: Tone -->
+    <div class="form-section">
+      <div class="section-label">
+        <div class="section-num">5</div>
+        <div class="section-title">Letter Tone</div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Tone of Letter</label>
+          <select id="letterTone">
+            <option value="firm">Firm & Professional (Recommended)</option>
+            <option value="urgent">Urgent & Strong</option>
+            <option value="polite">Polite & Requesting</option>
+            <option value="legal">Legal & Threatening</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Send Letter To</label>
+          <select id="recipient">
+            <option value="grievance">Grievance Officer</option>
+            <option value="ceo">CEO / MD</option>
+            <option value="irdai">IRDAI (Regulator)</option>
+            <option value="ombudsman">Insurance Ombudsman</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generate -->
+    <div class="generate-section">
+      <button class="generate-btn" onclick="generateLetter()">
+        ✍️ Generate My Dispute Letter
+      </button>
+      <p style="color:rgba(255,255,255,0.4); font-size:0.75rem; text-align:center; margin-top:10px;">Your data never leaves your device. 100% private.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="info-card">
+      <h3>📋 How It Works</h3>
+      <div class="step-list">
+        <div class="step-item"><div class="step-dot">1</div><div>Fill in your details and the reason for rejection</div></div>
+        <div class="step-item"><div class="step-dot">2</div><div>Click Generate — your letter is created instantly</div></div>
+        <div class="step-item"><div class="step-dot">3</div><div>Download as PDF or copy the text</div></div>
+        <div class="step-item"><div class="step-dot">4</div><div>Send via registered post or email to your insurer</div></div>
+        <div class="step-item"><div class="step-dot">5</div><div>Insurer must reply within 15 days per IRDAI rules</div></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>🏦 Works for All Insurers</h3>
+      <div class="insurer-list">
+        <span class="insurer-tag">Star Health</span>
+        <span class="insurer-tag">HDFC ERGO</span>
+        <span class="insurer-tag">ICICI Lombard</span>
+        <span class="insurer-tag">Bajaj Allianz</span>
+        <span class="insurer-tag">New India</span>
+        <span class="insurer-tag">LIC</span>
+        <span class="insurer-tag">Niva Bupa</span>
+        <span class="insurer-tag">Care Health</span>
+        <span class="insurer-tag">Tata AIG</span>
+        <span class="insurer-tag">SBI General</span>
+        <span class="insurer-tag">+ All others</span>
+      </div>
+    </div>
+
+    <div class="warning-card">
+      <strong>⚠️ Important Deadlines</strong>
+      You must file a dispute within <strong>30 days</strong> of receiving the rejection letter. Don't wait — generate your letter today.
+    </div>
+
+    <div class="info-card">
+      <h3>✅ What This Letter Does</h3>
+      <div class="step-list">
+        <div class="step-item"><div class="step-dot">✓</div><div>Formally disputes the rejection with legal backing</div></div>
+        <div class="step-item"><div class="step-dot">✓</div><div>References IRDAI Consumer Protection regulations</div></div>
+        <div class="step-item"><div class="step-dot">✓</div><div>Sets a clear deadline for the insurer to respond</div></div>
+        <div class="step-item"><div class="step-dot">✓</div><div>Mentions escalation to Insurance Ombudsman</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LETTER PREVIEW -->
+<div id="letter-preview">
+  <div class="letter-header">
+    <h2>📄 Your Dispute Letter</h2>
+    <div class="letter-actions">
+      <button class="btn-copy" onclick="copyLetter()">📋 Copy Text</button>
+      <button class="btn-download" onclick="downloadPDF()">⬇️ Download PDF</button>
+    </div>
+  </div>
+  <div class="letter-paper" id="letterContent"></div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Can I really dispute an insurance rejection? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes. Under IRDAI (Insurance Regulatory and Development Authority of India) guidelines, every policyholder has the right to formally dispute a claim rejection. The insurer is legally required to respond within 15 days of receiving your dispute letter.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What if they reject my dispute too? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">You can escalate to the Insurance Ombudsman — a free, independent government body that resolves insurance complaints. You can also approach the consumer forum or IRDAI directly. Most cases are resolved at the grievance officer level itself.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is this letter legally valid? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">This letter is based on standard legal dispute language used in India. However, it is not a substitute for professional legal advice. For large claims above ₹5 lakh, we recommend consulting a lawyer or insurance advisor.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How should I send this letter? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Send via registered post (keep the acknowledgement receipt) AND email to the grievance officer's email address. This creates a legal paper trail. The insurer's grievance email is usually on their website under "Contact Us".</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is my data safe? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">100%. This tool runs entirely in your browser. No data is sent to any server. We don't store, log, or see any of the information you enter. The letter is generated locally on your device.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>IndiaTools.in</strong> — Free tools for every Indian<br>
+  This tool is for informational purposes only and does not constitute legal advice.<br>
+  © 2024 IndiaTools.in · <a href="#" style="color:rgba(255,255,255,0.4)">Privacy Policy</a> · <a href="#" style="color:rgba(255,255,255,0.4)">Disclaimer</a>
+</footer>
+
+<script>
+let selectedReason = '';
+
+function selectReason(el, reason) {
+  document.querySelectorAll('.reason-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  selectedReason = reason;
+}
+
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+function getReasonArgument(reason, details) {
+  const args = {
+    'pre-existing': `The rejection on grounds of "pre-existing condition" is disputed. I was never formally diagnosed with this condition prior to taking this insurance policy, nor was I aware of any such condition at the time of policy inception. The treating physician's certificate clearly states that this was an acute/new condition. Under IRDAI guidelines, a condition cannot be termed "pre-existing" without documented prior diagnosis.`,
+    'not-covered': `The rejection stating that the treatment is "not covered" is disputed. The policy document does not explicitly exclude this treatment, and the condition for which treatment was sought is covered under the policy terms. I request the company to point out the specific exclusion clause under which this claim has been rejected, with exact page and clause number.`,
+    'waiting-period': `The rejection on grounds of "waiting period" is disputed. My policy has been active and in force for the requisite period. I request the company to provide the specific clause and calculation showing how the waiting period applies to my case, as my records indicate the waiting period has been duly served.`,
+    'documents': `The rejection on grounds of "incomplete documents" is disputed. I had submitted all documents as requested at the time of claim filing. If any additional documents are required, I request the company to provide a specific list in writing, and I am prepared to submit the same immediately.`,
+    'non-disclosure': `The rejection on grounds of "non-disclosure" is disputed. I had disclosed all material facts known to me at the time of policy inception in good faith. I was not aware of any undisclosed conditions, and the alleged non-disclosure pertains to information I had no reasonable knowledge of at that time.`,
+    'experimental': `The rejection on grounds of "experimental treatment" is disputed. The treatment I received is a standard, established medical procedure widely accepted by the medical community in India. It is not experimental in nature and is performed routinely at recognized hospitals across the country.`,
+    'network-hospital': `The rejection on grounds of "non-network hospital" is disputed. The treatment was necessitated by an emergency medical condition, and I was taken to the nearest available hospital. Under IRDAI regulations and standard policy terms, emergency hospitalization at any hospital is covered regardless of network status.`,
+    'other': `The grounds for rejection provided in your letter dated above are disputed as they are not supported by the facts of the case, the policy terms, or applicable IRDAI regulations.`
+  };
+  
+  let base = args[reason] || args['other'];
+  if (details && details.trim()) {
+    base += `\n\nSpecific facts in my case: ${details.trim()}`;
+  }
+  return base;
+}
+
+function getToneOpening(tone, recipientTitle) {
+  const openings = {
+    'firm': `I write to formally dispute the rejection of my health insurance claim and request an immediate review of the decision.`,
+    'urgent': `I write with utmost urgency to dispute the unjust rejection of my health insurance claim. This matter requires your immediate attention.`,
+    'polite': `I humbly bring to your attention my concerns regarding the rejection of my health insurance claim and respectfully request a review.`,
+    'legal': `I write to formally put you on notice that I dispute the rejection of my health insurance claim. Should this matter not be resolved satisfactorily, I will be constrained to pursue all available legal remedies.`
+  };
+  return openings[tone] || openings['firm'];
+}
+
+function getToneClosing(tone) {
+  const closings = {
+    'firm': `I expect a written response within 15 days of receipt of this letter, as mandated by IRDAI guidelines. Failure to respond or an unsatisfactory response will leave me with no option but to escalate this matter to the Insurance Ombudsman and IRDAI.`,
+    'urgent': `I demand an immediate response within 7 days. This delay is causing me severe financial hardship. I am prepared to escalate this to the Insurance Ombudsman, Consumer Forum, and IRDAI simultaneously if not resolved urgently.`,
+    'polite': `I kindly request you to review my case at your earliest convenience and provide a response within 15 days. I remain hopeful that this matter will be resolved amicably and I look forward to your positive response.`,
+    'legal': `Take notice that if a satisfactory resolution is not provided within 15 days, I shall without further intimation: (a) file a complaint with the Insurance Ombudsman under Rule 14 of the Insurance Ombudsman Rules 2017; (b) approach the appropriate Consumer Disputes Redressal Forum under the Consumer Protection Act 2019; (c) file a complaint with IRDAI. All costs, legal fees and consequential damages shall be claimed from your company.`
+  };
+  return closings[tone] || closings['firm'];
+}
+
+function generateLetter() {
+  // Validation
+  const required = {
+    patientName: 'Your Full Name',
+    policyNumber: 'Policy Number',
+    address: 'Your Address',
+    insurerName: 'Insurance Company',
+    claimAmount: 'Claim Amount',
+    hospitalName: 'Hospital Name',
+    diagnosis: 'Diagnosis'
+  };
+
+  for (const [id, label] of Object.entries(required)) {
+    if (!document.getElementById(id).value.trim()) {
+      alert(`Please fill in: ${label}`);
+      document.getElementById(id).focus();
+      return;
+    }
+  }
+
+  if (!selectedReason) {
+    alert('Please select the reason for rejection');
+    return;
+  }
+
+  // Get values
+  const name = document.getElementById('patientName').value.trim();
+  const policy = document.getElementById('policyNumber').value.trim();
+  const mobile = document.getElementById('mobile').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const insurer = document.getElementById('insurerName').value.trim();
+  const claimNum = document.getElementById('claimNumber').value.trim();
+  const rejDate = document.getElementById('rejectionDate').value;
+  const amount = document.getElementById('claimAmount').value.trim();
+  const hospital = document.getElementById('hospitalName').value.trim();
+  const city = document.getElementById('hospitalCity').value.trim();
+  const admDate = document.getElementById('admissionDate').value;
+  const disDate = document.getElementById('dischargeDate').value;
+  const diagnosis = document.getElementById('diagnosis').value.trim();
+  const details = document.getElementById('rejectionDetails').value.trim();
+  const tone = document.getElementById('letterTone').value;
+  const recipient = document.getElementById('recipient').value;
+
+  const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+  
+  const formatDate = (d) => d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }) : 'N/A';
+
+  const recipientTitles = {
+    grievance: 'The Grievance Officer',
+    ceo: 'The Chief Executive Officer',
+    irdai: 'The Insurance Regulatory and Development Authority of India (IRDAI)',
+    ombudsman: 'The Insurance Ombudsman'
+  };
+
+  const recipientTitle = recipientTitles[recipient];
+  const reasonArg = getReasonArgument(selectedReason, details);
+  const opening = getToneOpening(tone, recipientTitle);
+  const closing = getToneClosing(tone);
+
+  const letter = `${name}
+${address}${mobile ? '\nMobile: ' + mobile : ''}${email ? '\nEmail: ' + email : ''}
+
+Date: ${today}
+
+${recipientTitle}
+${insurer}
+[Insurer's Address - Please fill before sending]
+
+Subject: FORMAL DISPUTE OF HEALTH INSURANCE CLAIM REJECTION — Policy No. ${policy}${claimNum ? ' | Claim Ref: ' + claimNum : ''}
+
+Dear Sir/Madam,
+
+${opening}
+
+DETAILS OF CLAIM:
+• Policyholder Name: ${name}
+• Policy Number: ${policy}${claimNum ? '\n• Claim Reference Number: ' + claimNum : ''}
+• Claim Amount Disputed: ₹${Number(amount).toLocaleString('en-IN')}
+• Hospital: ${hospital}${city ? ', ' + city : ''}${admDate !== 'N/A' ? '\n• Admission Date: ' + formatDate(admDate) : ''}${disDate !== 'N/A' ? '\n• Discharge Date: ' + formatDate(disDate) : ''}
+• Diagnosis / Treatment: ${diagnosis}${rejDate ? '\n• Date of Rejection Letter: ' + formatDate(rejDate) : ''}
+
+GROUNDS FOR DISPUTE:
+
+${reasonArg}
+
+MY REQUEST:
+
+In light of the above, I hereby request you to:
+
+1. Reconsider and reverse the rejection of my claim bearing reference number ${claimNum || '[Claim Ref No.]'} for ₹${Number(amount).toLocaleString('en-IN')}.
+2. Provide specific written justification with exact policy clause references if the rejection is to be upheld.
+3. Expedite the processing of this claim in view of the financial distress caused.
+
+${closing}
+
+I am enclosing/have enclosed the following documents in support of my dispute:
+• Copy of original claim documents
+• Hospital discharge summary and bills
+• Doctor's certificate and prescriptions
+• Policy document copy
+• Rejection letter received from your office
+
+Please acknowledge receipt of this letter.
+
+Yours faithfully,
+
+${name}
+Policy No: ${policy}
+${mobile ? 'Mobile: ' + mobile : ''}
+${email ? 'Email: ' + email : ''}
+Date: ${today}`;
+
+  // Show letter
+  document.getElementById('letterContent').textContent = letter;
+  const preview = document.getElementById('letter-preview');
+  preview.style.display = 'block';
+  preview.classList.add('fade-up');
+  preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  
+  // Store for PDF
+  window._letterText = letter;
+  window._letterName = name;
+}
+
+function copyLetter() {
+  navigator.clipboard.writeText(window._letterText || '').then(() => {
+    const btn = document.querySelector('.btn-copy');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Text', 2000);
+  });
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  
+  const lines = doc.splitTextToSize(window._letterText || '', 170);
+  const pageHeight = 270;
+  let y = 25;
+
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+  
+  lines.forEach(line => {
+    if (y > pageHeight) {
+      doc.addPage();
+      y = 25;
+    }
+    doc.text(line, 20, y);
+    y += 6;
+  });
+
+  doc.save(`Insurance_Dispute_Letter_${(window._letterName || 'claim').replace(/ /g,'_')}.pdf`);
+}
+</script>
+
 </body>
 </html>
