@@ -154,56 +154,15 @@ footer strong { color: var(--text); }
 }
 </style>
 
-<style id="indiatools-nav-css">
-.it-nav-bar {
-  background: #0d5c31;
-  padding: 0;
-  overflow-x: auto;
-  white-space: nowrap;
-  border-bottom: 2px solid #1a8a4a;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  position: sticky;
-  top: 58px;
-  z-index: 99;
-}
-.it-nav-bar::-webkit-scrollbar { display: none; }
-.it-nav-inner {
-  display: inline-flex;
-  align-items: center;
-  padding: 0 16px;
-  gap: 2px;
-  min-width: 100%;
-}
-.it-nav-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 0.78rem;
-  font-weight: 600;
-  font-family: 'Nunito', 'DM Sans', sans-serif;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: 0.15s;
-  margin-bottom: -2px;
-}
-.it-nav-link:hover {
-  color: white;
-  border-bottom-color: #7effa8;
-  background: rgba(255,255,255,0.05);
-}
-.it-nav-link.active {
-  color: #7effa8;
-  border-bottom-color: #7effa8;
-  font-weight: 700;
-}
-.it-nav-icon { font-size: 0.9rem; }
-@media(max-width:600px){
-  .it-nav-link { padding: 9px 10px; font-size: 0.72rem; }
-}
+
+<style id="it-nav-style">
+.it-nav-bar{background:#0d5c31;overflow-x:auto;white-space:nowrap;border-bottom:2px solid #1a8a4a;scrollbar-width:none;-ms-overflow-style:none;position:sticky;top:58px;z-index:99;}
+.it-nav-bar::-webkit-scrollbar{display:none;}
+.it-nav-inner{display:inline-flex;align-items:center;padding:0 12px;gap:2px;min-width:100%;}
+.it-nav-link{display:inline-flex;align-items:center;gap:5px;padding:9px 12px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.76rem;font-weight:600;white-space:nowrap;border-bottom:2px solid transparent;transition:0.15s;margin-bottom:-2px;font-family:inherit;}
+.it-nav-link:hover{color:#fff;border-bottom-color:#7effa8;background:rgba(255,255,255,0.05);}
+.it-nav-link.it-active{color:#7effa8;border-bottom-color:#7effa8;font-weight:700;}
+@media(max-width:600px){.it-nav-link{padding:8px 9px;font-size:0.7rem;}}
 </style>
 </head>
 <body>
@@ -218,6 +177,9 @@ footer strong { color: var(--text); }
     </nav>
   </div>
 </header>
+<nav class="it-nav-bar">
+<div class="it-nav-inner"><a href="index.html" class="it-nav-link">🏠 Home</a><a href="health-insurance-claim.html" class="it-nav-link">🏥 Insurance Claim</a><a href="legal-notice.html" class="it-nav-link">⚖️ Legal Notice</a><a href="salary-slip.html" class="it-nav-link">💼 Salary Slip</a><a href="offer-letter.html" class="it-nav-link">📋 Offer Letter</a><a href="challan-dispute.html" class="it-nav-link">🚗 Challan Dispute</a><a href="rent-agreement.html" class="it-nav-link">🏠 Rent Agreement</a><a href="experience-certificate.html" class="it-nav-link it-active">📜 Experience Cert</a><a href="medicine-substitute.html" class="it-nav-link">💊 Medicine Finder</a></div>
+</nav>
 
 <div class="hero">
   <div class="hero-inner">
