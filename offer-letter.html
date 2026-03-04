@@ -240,6 +240,58 @@ footer strong { color: var(--text); }
   .faq-wrap { padding:0 20px; }
 }
 </style>
+
+<style id="indiatools-nav-css">
+.it-nav-bar {
+  background: #0d5c31;
+  padding: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 2px solid #1a8a4a;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: sticky;
+  top: 58px;
+  z-index: 99;
+}
+.it-nav-bar::-webkit-scrollbar { display: none; }
+.it-nav-inner {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 2px;
+  min-width: 100%;
+}
+.it-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: 'Nunito', 'DM Sans', sans-serif;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: 0.15s;
+  margin-bottom: -2px;
+}
+.it-nav-link:hover {
+  color: white;
+  border-bottom-color: #7effa8;
+  background: rgba(255,255,255,0.05);
+}
+.it-nav-link.active {
+  color: #7effa8;
+  border-bottom-color: #7effa8;
+  font-weight: 700;
+}
+.it-nav-icon { font-size: 0.9rem; }
+@media(max-width:600px){
+  .it-nav-link { padding: 9px 10px; font-size: 0.72rem; }
+}
+</style>
 </head>
 <body>
 
