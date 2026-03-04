@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Notice Generator India — Free | Send Notice to Landlord, Employer, Builder</title>
+<meta name="description" content="Generate a free legal notice in India instantly. Send legal notice to landlord, employer, builder, fraud, neighbour. Legally worded, download PDF free. Hindi & English.">
+<meta name="keywords" content="legal notice generator India, free legal notice format, legal notice to landlord India, legal notice to employer, legal notice PDF download free India">
+<meta property="og:title" content="Legal Notice Generator India — Free PDF Download">
+<meta property="og:description" content="Send a professionally drafted legal notice in minutes. No lawyer fees. Works for landlord, employer, builder, fraud and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0c0e12;
+  --surface: #13161d;
+  --border: #1e2230;
+  --accent: #e63946;
+  --accent2: #f4a261;
+  --text: #e8eaf0;
+  --muted: #6b7280;
+  --card: #181b24;
+  --gold: #f4a261;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text);
+}
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* HERO */
+.hero {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #0c0e12 0%, #1a0a0e 50%, #0c0e12 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '⚖️';
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 200px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+.hero-inner { max-width: 900px; margin: 0 auto; }
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(230,57,70,0.1);
+  border: 1px solid rgba(230,57,70,0.25);
+  color: #ff6b78;
+  font-size: 0.72rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+.hero h1 .highlight { color: var(--accent); }
+.hero-desc {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 620px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+.hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* NOTICE TYPE SELECTOR */
+.type-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px 0;
+}
+.type-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.type-section p { color: var(--muted); font-size: 0.88rem; margin-bottom: 24px; }
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.type-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+.type-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.type-card.active { border-color: var(--accent); background: rgba(230,57,70,0.07); }
+.type-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+.type-name { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.type-desc { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+
+/* MAIN */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* FORM CARD */
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.form-section {
+  padding: 26px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.form-section:last-child { border-bottom: none; }
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.sec-num {
+  width: 26px; height: 26px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg.one { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.field input, .field select, .field textarea {
+  padding: 10px 13px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(230,57,70,0.1);
+}
+.field input::placeholder, .field textarea::placeholder { color: #3a3f4e; }
+.field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+.field select { cursor: pointer; }
+.field select option { background: var(--surface); }
+
+/* GENERATE BTN */
+.gen-wrap {
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #1a0a0e, #0c0e12);
+  border-top: 1px solid var(--border);
+}
+.gen-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  letter-spacing: -0.3px;
+}
+.gen-btn:hover { background: #d42f3c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(230,57,70,0.35); }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.info-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+}
+.info-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.info-list { display: flex; flex-direction: column; gap: 10px; }
+.info-item {
+  display: flex;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  align-items: flex-start;
+}
+.info-dot {
+  width: 20px; height: 20px;
+  background: rgba(230,57,70,0.15);
+  border: 1px solid rgba(230,57,70,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.warn-box {
+  background: rgba(244,162,97,0.08);
+  border: 1px solid rgba(244,162,97,0.2);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 0.82rem;
+  color: #c97c3a;
+  line-height: 1.6;
+}
+.warn-box strong { display: block; color: var(--gold); margin-bottom: 5px; }
+
+/* LETTER PREVIEW */
+#letter-preview {
+  display: none;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+}
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.preview-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+.preview-actions { display: flex; gap: 10px; }
+.btn-dl {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition: 0.2s;
+}
+.btn-dl:hover { background: #d42f3c; }
+.btn-cp {
+  padding: 10px 20px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition: 0.2s;
+}
+.btn-cp:hover { border-color: var(--text); }
+.letter-paper {
+  background: white;
+  color: #111;
+  border-radius: 14px;
+  padding: 60px;
+  font-family: 'Georgia', serif;
+  font-size: 0.93rem;
+  line-height: 1.85;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* FAQ */
+.faq-section {
+  max-width: 780px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+}
+.faq-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  background: var(--card);
+  overflow: hidden;
+}
+.faq-q {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.faq-q:hover { background: var(--surface); }
+.faq-a {
+  display: none;
+  padding: 0 20px 16px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-arrow { transition: transform 0.2s; font-size: 0.7rem; color: var(--muted); }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+/* FOOTER */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 28px 40px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.4s ease forwards; }
+
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; padding: 0 20px 40px; }
+  .hero { padding: 50px 20px; }
+  header { padding: 0 20px; }
+  .type-section { padding: 30px 20px 0; }
+  .fg { grid-template-columns: 1fr; }
+  .type-grid { grid-template-columns: repeat(2, 1fr); }
+  #letter-preview { padding: 0 20px; }
+  .letter-paper { padding: 28px 20px; }
+  .faq-section { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">India<span>Tools</span>.in</div>
+    <nav class="nav-links">
+      <a href="health-insurance-claim.html">Insurance Claim</a>
+      <a href="index.html">All Tools</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">⚖️ Legal Notice Generator</div>
+    <h1>Send a <span class="highlight">Legal Notice</span><br>Without a Lawyer</h1>
+    <p class="hero-desc">Generate a professionally drafted legal notice for any situation — landlord, employer, builder, fraud, or neighbour disputes. Free PDF download. Works across India.</p>
+    <div class="hero-chips">
+      <span class="chip">🏠 Landlord / Tenant</span>
+      <span class="chip">💼 Employer / Salary</span>
+      <span class="chip">🏗️ Builder / Property</span>
+      <span class="chip">💰 Money Recovery</span>
+      <span class="chip">👥 Neighbour Disputes</span>
+    </div>
+  </div>
+</div>
+
+<!-- TYPE SELECTOR -->
+<div class="type-section">
+  <h2>Select Your Notice Type</h2>
+  <p>Choose the situation that best matches your case</p>
+  <div class="type-grid">
+    <div class="type-card active" onclick="selectType(this,'landlord')">
+      <span class="type-icon">🏠</span>
+      <div class="type-name">Landlord / Tenant</div>
+      <div class="type-desc">Deposit refund, illegal eviction, repairs</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'employer')">
+      <span class="type-icon">💼</span>
+      <div class="type-name">Employer</div>
+      <div class="type-desc">Unpaid salary, wrongful termination, dues</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'builder')">
+      <span class="type-icon">🏗️</span>
+      <div class="type-name">Builder / Developer</div>
+      <div class="type-desc">Delayed possession, RERA complaint</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'money')">
+      <span class="type-icon">💰</span>
+      <div class="type-name">Money Recovery</div>
+      <div class="type-desc">Loan recovery, cheque bounce, dues</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'neighbour')">
+      <span class="type-icon">👥</span>
+      <div class="type-name">Neighbour</div>
+      <div class="type-desc">Encroachment, noise, property damage</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'fraud')">
+      <span class="type-icon">🚫</span>
+      <div class="type-name">Fraud / Cheating</div>
+      <div class="type-desc">Online fraud, defective goods, cheating</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="form-card">
+
+    <!-- Your Details -->
+    <div class="form-section">
+      <div class="section-heading">
+        <div class="sec-num">1</div>
+        <div class="sec-title">Your Details (Sender)</div>
+      </div>
+      <div class="fg">
+        <div class="field"><label>Full Name *</label><input id="senderName" placeholder="Amit Suresh Patil" type="text"></div>
+        <div class="field"><label>Father's / Husband's Name</label><input id="senderFather" placeholder="Suresh Patil" type="text"></div>
+        <div class="field one" style="grid-column:1/-1"><label>Full Address *</label><input id="senderAddress" placeholder="Flat 12, Vasant Vihar Society, Pune - 411007" type="text"></div>
+        <div class="field"><label>Mobile *</label><input id="senderMobile" placeholder="9876543210" type="tel"></div>
+        <div class="field"><label>Email</label><input id="senderEmail" placeholder="amit@gmail.com" type="email"></div>
+      </div>
+    </div>
+
+    <!-- Recipient Details -->
+    <div class="form-section">
+      <div class="section-heading">
+        <div class="sec-num">2</div>
+        <div class="sec-title">Recipient Details (Who Gets the Notice)</div>
+      </div>
+      <div class="fg">
+        <div class="field"><label>Full Name / Company Name *</label><input id="recipientName" placeholder="Mr. Ramesh Gupta / ABC Builders Pvt Ltd" type="text"></div>
+        <div class="field"><label>Designation / Role</label><input id="recipientRole" placeholder="Landlord / HR Manager / Builder" type="text"></div>
+        <div class="field one" style="grid-column:1/-1"><label>Full Address *</label><input id="recipientAddress" placeholder="123, Main Street, Mumbai - 400001" type="text"></div>
+      </div>
+    </div>
+
+    <!-- Dispute Details -->
+    <div class="form-section">
+      <div class="section-heading">
+        <div class="sec-num">3</div>
+        <div class="sec-title">Dispute Details</div>
+      </div>
+      <div class="fg">
+        <div class="field"><label>Amount Involved (₹)</label><input id="amount" placeholder="50000" type="number"></div>
+        <div class="field"><label>Date of Incident / Agreement</label><input id="incidentDate" type="date"></div>
+        <div class="field one" style="grid-column:1/-1">
+          <label>Describe Your Problem in Detail *</label>
+          <textarea id="problemDetails" placeholder="e.g. I paid ₹50,000 as security deposit to Mr. Ramesh Gupta for a flat at the above address. My tenancy ended on 31st October 2024 and I vacated the flat in good condition. Despite multiple requests and 2 months having passed, he has not returned my deposit and is making false damage claims..."></textarea>
+        </div>
+        <div class="field one" style="grid-column:1/-1">
+          <label>What Do You Want Them to Do?</label>
+          <textarea id="demand" placeholder="e.g. Return my security deposit of ₹50,000 within 15 days, failing which I will be forced to take legal action..." style="min-height:70px"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="form-section">
+      <div class="section-heading">
+        <div class="sec-num">4</div>
+        <div class="sec-title">Notice Settings</div>
+      </div>
+      <div class="fg">
+        <div class="field">
+          <label>Notice Period (Days to Respond)</label>
+          <select id="noticePeriod">
+            <option value="7">7 Days (Urgent)</option>
+            <option value="15" selected>15 Days (Standard)</option>
+            <option value="30">30 Days (Final Warning)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tone</label>
+          <select id="noticeTone">
+            <option value="firm">Firm & Professional</option>
+            <option value="final">Final Warning</option>
+            <option value="legal">Strong Legal Language</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="gen-wrap">
+      <button class="gen-btn" onclick="generateNotice()">⚖️ Generate Legal Notice</button>
+      <p style="color:var(--muted); font-size:0.72rem; text-align:center; margin-top:10px;">Your data never leaves your device. 100% private.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="info-box">
+      <h3>📋 How to Use This Notice</h3>
+      <div class="info-list">
+        <div class="info-item"><div class="info-dot">1</div><div>Fill details and generate the notice</div></div>
+        <div class="info-item"><div class="info-dot">2</div><div>Download PDF and print on plain paper</div></div>
+        <div class="info-item"><div class="info-dot">3</div><div>Sign the letter yourself</div></div>
+        <div class="info-item"><div class="info-dot">4</div><div>Send via <strong>registered post</strong> — keep the receipt</div></div>
+        <div class="info-item"><div class="info-dot">5</div><div>Also email a scanned copy for digital proof</div></div>
+        <div class="info-item"><div class="info-dot">6</div><div>If no response, approach consumer forum or court</div></div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>⚖️ Legal Backing</h3>
+      <div class="info-list">
+        <div class="info-item"><div class="info-dot">✓</div><div>Consumer Protection Act, 2019</div></div>
+        <div class="info-item"><div class="info-dot">✓</div><div>Code of Civil Procedure, 1908</div></div>
+        <div class="info-item"><div class="info-dot">✓</div><div>Indian Contract Act, 1872</div></div>
+        <div class="info-item"><div class="info-dot">✓</div><div>Transfer of Property Act (for rent)</div></div>
+        <div class="info-item"><div class="info-dot">✓</div><div>RERA Act (for builders)</div></div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <strong>⚠️ Pro Tip</strong>
+      Always send the notice by <strong>Registered Post with Acknowledgement Due (RPAD)</strong>. The acknowledgement receipt is your legal proof of delivery and is admissible in court.
+    </div>
+
+    <div class="info-box">
+      <h3>💡 Did You Know?</h3>
+      <div class="info-list">
+        <div class="info-item"><div class="info-dot">i</div><div>A legal notice is NOT the same as filing a case. It's a formal warning that gives the other party a last chance to settle before you go to court.</div></div>
+        <div class="info-item"><div class="info-dot">i</div><div>Most disputes (85%+) are resolved after receiving a legal notice — without ever going to court.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LETTER PREVIEW -->
+<div id="letter-preview">
+  <div class="preview-header">
+    <h2>⚖️ Your Legal Notice</h2>
+    <div class="preview-actions">
+      <button class="btn-cp" onclick="copyNotice()">📋 Copy Text</button>
+      <button class="btn-dl" onclick="downloadPDF()">⬇️ Download PDF</button>
+    </div>
+  </div>
+  <div class="letter-paper" id="noticeContent"></div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is a self-drafted legal notice valid? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes. In India, there is no law requiring a legal notice to be drafted by a lawyer. A notice drafted by you personally or using this tool is completely valid. However, for cases involving large amounts or criminal matters, a lawyer-drafted notice adds more weight.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What if the person ignores the notice? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">If the recipient ignores the notice within the given time period, you can file a case in the appropriate forum — Consumer Disputes Redressal Commission (for consumer matters), Civil Court, or approach the Police for criminal matters. The notice itself becomes evidence in court.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How much does it cost to send a legal notice? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Using this tool, generating the notice is free. Sending via registered post costs ₹30-50. If you hire a lawyer to draft and send it, expect to pay ₹1,000 to ₹5,000 depending on the complexity. This tool saves you that cost entirely.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Can I send this notice via email? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes, you can send it via email as well. However, registered post is legally stronger as it provides undeniable proof of delivery. Ideally, send it both ways — registered post AND email — and keep copies of both.</div>
+  </div>
+</div>
+
+<footer>
+  <strong style="color:#e8eaf0">IndiaTools.in</strong> — Free Legal & Document Tools for Every Indian<br>
+  This tool provides general legal document templates for informational purposes only. It does not constitute legal advice.<br>
+  For complex matters, please consult a qualified advocate. © 2024 IndiaTools.in ·
+  <a href="health-insurance-claim.html">Insurance Claim Tool</a> ·
+  <a href="index.html">All Tools</a>
+</footer>
+
+<script>
+let selectedType = 'landlord';
+
+function selectType(el, type) {
+  document.querySelectorAll('.type-card').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  selectedType = type;
+}
+
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+function getTypeContext(type, problem, demand, amount, recipientRole) {
+  const amountStr = amount ? `₹${Number(amount).toLocaleString('en-IN')}` : 'the said amount';
+  
+  const contexts = {
+    landlord: {
+      subject: `LEGAL NOTICE FOR REFUND OF SECURITY DEPOSIT / TENANCY DISPUTE`,
+      law: `Under the Transfer of Property Act, 1882 and the applicable Rent Control Act`,
+      context: `I was a tenant at the premises owned/managed by you`
+    },
+    employer: {
+      subject: `LEGAL NOTICE FOR RECOVERY OF UNPAID DUES / WRONGFUL TERMINATION`,
+      law: `Under the Industrial Disputes Act, 1947, the Payment of Wages Act, 1936 and applicable labour laws`,
+      context: `I was employed with your organization`
+    },
+    builder: {
+      subject: `LEGAL NOTICE UNDER RERA / DELAYED POSSESSION / BUILDER DISPUTE`,
+      law: `Under the Real Estate (Regulation and Development) Act, 2016 (RERA) and the Consumer Protection Act, 2019`,
+      context: `I had entered into an agreement with you for purchase/booking of property`
+    },
+    money: {
+      subject: `LEGAL NOTICE FOR RECOVERY OF MONEY / OUTSTANDING DUES`,
+      law: `Under the Indian Contract Act, 1872 and the Negotiable Instruments Act, 1881`,
+      context: `You are indebted to me for ${amountStr}`
+    },
+    neighbour: {
+      subject: `LEGAL NOTICE FOR ENCROACHMENT / NUISANCE / PROPERTY DISPUTE`,
+      law: `Under the Code of Civil Procedure, 1908 and applicable nuisance laws`,
+      context: `As your neighbouring property owner/resident`
+    },
+    fraud: {
+      subject: `LEGAL NOTICE FOR FRAUD / CHEATING / DEFICIENT SERVICES`,
+      law: `Under the Consumer Protection Act, 2019, the Indian Penal Code (Bharatiya Nyaya Sanhita) and applicable laws`,
+      context: `You have committed fraud/cheating causing loss to me`
+    }
+  };
+  return contexts[type] || contexts['landlord'];
+}
+
+function getToneText(tone, days) {
+  const tones = {
+    firm: `You are hereby called upon to comply with the above demands within ${days} days of receipt of this notice. Failure to do so will leave me with no option but to initiate appropriate legal proceedings before the competent court/forum without any further notice, at your risk, cost and consequences.`,
+    final: `This is your FINAL OPPORTUNITY to resolve this matter without litigation. You are hereby required to fulfil the above demands within ${days} days failing which I shall immediately and without further notice file appropriate legal proceedings including civil suit and/or criminal complaint, claiming full amount with interest, compensation and legal costs from you.`,
+    legal: `Take notice that if the above demands are not complied with within ${days} days from the date of receipt of this notice, I shall be constrained to initiate the following legal actions against you: (a) File a civil suit for recovery with interest at 18% per annum; (b) File a criminal complaint under applicable sections of the Bharatiya Nyaya Sanhita (formerly IPC); (c) Approach the Consumer Disputes Redressal Commission for compensation and punitive damages; (d) All legal costs and consequential damages shall be claimed from you. You are advised to seek legal counsel immediately.`
+  };
+  return tones[tone] || tones['firm'];
+}
+
+function generateNotice() {
+  const required = { senderName: 'Your Name', senderAddress: 'Your Address', senderMobile: 'Your Mobile', recipientName: "Recipient's Name", recipientAddress: "Recipient's Address", problemDetails: 'Problem Details' };
+  
+  for (const [id, label] of Object.entries(required)) {
+    if (!document.getElementById(id).value.trim()) {
+      alert(`Please fill in: ${label}`);
+      document.getElementById(id).focus();
+      return;
+    }
+  }
+
+  const sName = document.getElementById('senderName').value.trim();
+  const sFather = document.getElementById('senderFather').value.trim();
+  const sAddress = document.getElementById('senderAddress').value.trim();
+  const sMobile = document.getElementById('senderMobile').value.trim();
+  const sEmail = document.getElementById('senderEmail').value.trim();
+  const rName = document.getElementById('recipientName').value.trim();
+  const rRole = document.getElementById('recipientRole').value.trim();
+  const rAddress = document.getElementById('recipientAddress').value.trim();
+  const amount = document.getElementById('amount').value.trim();
+  const problem = document.getElementById('problemDetails').value.trim();
+  const demand = document.getElementById('demand').value.trim();
+  const days = document.getElementById('noticePeriod').value;
+  const tone = document.getElementById('noticeTone').value;
+
+  const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+  const ctx = getTypeContext(selectedType, problem, demand, amount, rRole);
+  const toneText = getToneText(tone, days);
+  const amountStr = amount ? `₹${Number(amount).toLocaleString('en-IN')}` : '';
+
+  const notice = `LEGAL NOTICE
+
+From:
+${sName}${sFather ? '\nS/o, W/o, D/o: ' + sFather : ''}
+${sAddress}
+Mobile: ${sMobile}${sEmail ? '\nEmail: ' + sEmail : ''}
+
+Date: ${today}
+
+To:
+${rName}${rRole ? '\n(' + rRole + ')' : ''}
+${rAddress}
+
+Subject: ${ctx.subject}
+
+Sir/Madam,
+
+Under instructions from and on behalf of my client / I, ${sName}, residing at ${sAddress}, I/we hereby serve upon you the following legal notice:
+
+1. BACKGROUND:
+
+${ctx.context}. ${ctx.law}, I hereby place the following facts on record:
+
+${problem}
+
+2. LEGAL POSITION:
+
+Your actions/omissions as described above are in clear violation of your legal obligations and have caused me considerable financial loss, mental agony and hardship. ${amountStr ? `The total amount recoverable from you stands at ${amountStr} along with applicable interest.` : ''}
+
+3. DEMAND:
+
+${demand || `You are hereby called upon to immediately resolve the above dispute, comply with your legal obligations, and compensate me for the loss caused.`}
+
+4. NOTICE:
+
+${toneText}
+
+I hereby reserve all my rights and remedies available under law.
+
+This notice is being sent by Registered Post with Acknowledgement Due (RPAD) and a copy is being retained for record.
+
+Yours faithfully,
+
+${sName}
+${sAddress}
+Mobile: ${sMobile}
+Date: ${today}
+
+Note: Please treat this as an official legal notice. Your prompt response/compliance is expected.`;
+
+  document.getElementById('noticeContent').textContent = notice;
+  const preview = document.getElementById('letter-preview');
+  preview.style.display = 'block';
+  preview.classList.add('fade-up');
+  preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window._noticeText = notice;
+  window._noticeName = sName;
+}
+
+function copyNotice() {
+  navigator.clipboard.writeText(window._noticeText || '').then(() => {
+    const btn = document.querySelector('.btn-cp');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Text', 2000);
+  });
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const lines = doc.splitTextToSize(window._noticeText || '', 170);
+  let y = 25;
+  doc.setFontSize(10.5);
+  doc.setFont('helvetica', 'normal');
+  lines.forEach(line => {
+    if (y > 272) { doc.addPage(); y = 25; }
+    doc.text(line, 20, y);
+    y += 5.8;
+  });
+  doc.save(`Legal_Notice_${(window._noticeName || 'notice').replace(/ /g,'_')}.pdf`);
+}
+</script>
+</body>
+</html>
