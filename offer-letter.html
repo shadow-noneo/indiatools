@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="JocTXvDMUFELTvvK8_87XrxyCMSAvDiGH6iEvwC8hNY" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4572026782484804" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offer Letter Generator India — Free PDF Download | Job Offer Letter Format</title>
+<meta name="description" content="Generate a professional job offer letter instantly for free. Perfect for startups, small businesses and HR teams in India. Download PDF free. All designations covered.">
+<meta name="keywords" content="offer letter generator India, job offer letter format India free, offer letter PDF download, appointment letter generator India, offer letter template India">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0d0d0f;
+  --surface: #141416;
+  --card: #1a1a1e;
+  --border: #252528;
+  --text: #e8e8ec;
+  --muted: #666670;
+  --accent: #7c6af7;
+  --accent2: #f7a26a;
+  --green: #4ade80;
+  --red: #f87171;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; min-height: 100vh; }
+
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  position: sticky; top: 0; z-index: 100;
+}
+.hi { max-width: 1200px; margin: 0 auto; height: 58px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+.logo span { color: var(--accent2); }
+.hnav { display: flex; gap: 20px; }
+.hnav a { color: var(--muted); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: color 0.2s; }
+.hnav a:hover { color: var(--text); }
+
+.hero {
+  padding: 80px 40px 90px;
+  background: linear-gradient(135deg, #0d0d0f 0%, #13101f 50%, #0d0d0f 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(124,106,247,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+.htag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(124,106,247,0.1);
+  border: 1px solid rgba(124,106,247,0.25);
+  color: #a89ff9;
+  font-size: 0.7rem; padding: 5px 14px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 24px; font-weight: 600;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: 18px;
+}
+.hero h1 em { font-style: italic; color: var(--accent2); }
+.hero p { color: var(--muted); font-size: 1rem; max-width: 600px; line-height: 1.7; margin-bottom: 32px; font-weight: 300; }
+.hchips { display: flex; gap: 10px; flex-wrap: wrap; }
+.hchip {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 7px 16px; border-radius: 4px;
+  font-size: 0.75rem; color: var(--muted); font-weight: 500;
+}
+
+.layout {
+  max-width: 1200px; margin: 0 auto;
+  padding: 50px 40px; display: grid;
+  grid-template-columns: 1fr 340px; gap: 32px; align-items: start;
+}
+
+.form-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; }
+.fsec { padding: 26px 30px; border-bottom: 1px solid var(--border); }
+.fsec:last-child { border-bottom: none; }
+.fhead { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.fnum {
+  width: 26px; height: 26px; background: var(--accent);
+  color: white; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
+}
+.ftitle { font-size: 0.95rem; font-weight: 700; }
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 0.68rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.field input, .field select, .field textarea {
+  padding: 10px 13px;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 8px; color: var(--text);
+  font-family: 'Outfit', sans-serif; font-size: 0.88rem;
+  outline: none; transition: 0.2s; width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124,106,247,0.1);
+}
+.field input::placeholder, .field textarea::placeholder { color: #333338; }
+.field select option { background: var(--surface); }
+.field textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+
+/* PERKS */
+.perks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.perk-item {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 9px 12px; cursor: pointer; transition: 0.15s;
+  font-size: 0.82rem; font-weight: 500;
+}
+.perk-item:hover { border-color: var(--accent); }
+.perk-item.active { border-color: var(--accent); background: rgba(124,106,247,0.08); color: #a89ff9; }
+.perk-item input[type="checkbox"] { accent-color: var(--accent); width: 14px; height: 14px; }
+
+.gen-wrap { padding: 22px 30px; background: linear-gradient(135deg, #13101f, #0d0d0f); }
+.gen-btn {
+  width: 100%; padding: 15px;
+  background: var(--accent); color: white; border: none;
+  border-radius: 10px; font-family: 'Outfit', sans-serif;
+  font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+.gen-btn:hover { background: #6a58e8; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,106,247,0.35); }
+
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.scard { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+.scard h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.slist { display: flex; flex-direction: column; gap: 9px; }
+.sitem { display: flex; gap: 9px; font-size: 0.8rem; color: var(--muted); line-height: 1.5; align-items: flex-start; }
+.sdot {
+  width: 18px; height: 18px;
+  background: rgba(124,106,247,0.15); color: var(--accent);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.tip-box {
+  background: rgba(247,162,106,0.06);
+  border: 1px solid rgba(247,162,106,0.2);
+  border-radius: 10px; padding: 14px 16px;
+  font-size: 0.8rem; color: #c47a40; line-height: 1.6;
+}
+.tip-box strong { display: block; color: var(--accent2); margin-bottom: 4px; font-size: 0.85rem; }
+
+/* LETTER */
+#preview-wrap { display: none; max-width: 1200px; margin: 0 auto 60px; padding: 0 40px; }
+.pbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+.pbar h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; }
+.pbtns { display: flex; gap: 10px; }
+.btn-dl { padding: 10px 20px; background: var(--accent); color: white; border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.btn-dl:hover { background: #6a58e8; }
+.btn-cp { padding: 10px 20px; background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+.btn-cp:hover { border-color: var(--text); }
+
+.letter {
+  background: white; color: #111;
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  font-family: 'Outfit', sans-serif;
+}
+.letter-head {
+  background: #0d0d0f; color: white;
+  padding: 28px 44px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.lco-name { font-size: 1.3rem; font-weight: 700; }
+.lco-addr { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 3px; }
+.lco-ref { text-align: right; font-size: 0.75rem; color: rgba(255,255,255,0.45); }
+.lco-ref strong { color: rgba(255,255,255,0.8); font-size: 0.85rem; display: block; }
+
+.letter-body { padding: 36px 44px; font-size: 0.92rem; line-height: 1.8; color: #222; }
+.letter-body .date { color: #666; font-size: 0.82rem; margin-bottom: 20px; }
+.letter-body .candidate { margin-bottom: 20px; font-size: 0.85rem; color: #444; }
+.subject { font-weight: 700; font-size: 1rem; color: #111; margin-bottom: 20px; border-bottom: 2px solid #f0f0f0; padding-bottom: 12px; }
+.letter-body p { margin-bottom: 14px; }
+
+.offer-table {
+  width: 100%; border-collapse: collapse;
+  margin: 20px 0; font-size: 0.85rem;
+}
+.offer-table th {
+  background: #f8f8f8; padding: 10px 14px;
+  text-align: left; font-weight: 600; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 0.5px; color: #666;
+  border-bottom: 2px solid #e8e8e8;
+}
+.offer-table td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; }
+.offer-table tr:last-child td { border-bottom: none; }
+.offer-table .highlight { font-weight: 700; color: #111; }
+
+.perks-section { background: #f8fffe; border: 1px solid #d1fae5; border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+.perks-section h4 { font-size: 0.8rem; font-weight: 700; color: #065f46; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.perks-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.perk-tag { background: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+
+.letter-sign { padding: 24px 44px; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: flex-end; }
+.sign-block { font-size: 0.78rem; color: #666; }
+.sign-line { width: 160px; border-bottom: 1.5px solid #ccc; margin-bottom: 6px; height: 40px; }
+.sign-label { font-weight: 600; color: #333; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.accept-block { background: #f8f8f8; border: 1px solid #e8e8e8; border-radius: 8px; padding: 14px 18px; font-size: 0.78rem; color: #666; max-width: 280px; }
+.accept-block strong { display: block; color: #333; margin-bottom: 6px; }
+
+/* FAQ */
+.faq-wrap { max-width: 780px; margin: 0 auto 80px; padding: 0 40px; }
+.faq-wrap h2 { font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 28px; letter-spacing: -0.5px; }
+.faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; background: var(--card); overflow: hidden; }
+.faq-q { padding: 16px 20px; font-weight: 600; font-size: 0.88rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+.faq-q:hover { background: var(--surface); }
+.faq-a { display: none; padding: 0 20px 16px; font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+.faq-arrow { transition: transform 0.2s; font-size: 0.7rem; color: var(--muted); }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+footer { background: var(--surface); border-top: 1px solid var(--border); text-align: center; padding: 28px; font-size: 0.77rem; color: var(--muted); line-height: 1.8; }
+footer a { color: var(--muted); text-decoration: none; }
+footer strong { color: var(--text); }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.fade-up { animation: fadeUp 0.4s ease forwards; }
+
+@media(max-width:960px){
+  .layout { grid-template-columns:1fr; padding:30px 20px; }
+  .hero { padding:50px 20px 80px; }
+  header { padding:0 20px; }
+  .fg { grid-template-columns:1fr; }
+  .perks-grid { grid-template-columns:1fr; }
+  #preview-wrap { padding:0 20px; }
+  .letter-head { flex-direction:column; gap:10px; }
+  .letter-body { padding:24px 20px; }
+  .letter-sign { flex-direction:column; gap:20px; }
+  .faq-wrap { padding:0 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hi">
+    <div class="logo">India<span>Tools</span>.in</div>
+    <nav class="hnav">
+      <a href="salary-slip.html">Salary Slip</a>
+      <a href="legal-notice.html">Legal Notice</a>
+      <a href="index.html">All Tools</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="htag">📋 Offer Letter Generator</div>
+    <h1>Professional Job Offer Letter<br><em>in 2 Minutes</em></h1>
+    <p>Generate a complete, legally sound offer letter for any position. Free PDF download. Perfect for startups, SMEs, and growing businesses across India.</p>
+    <div class="hchips">
+      <span class="hchip">✓ All Designations</span>
+      <span class="hchip">✓ Custom Perks & Benefits</span>
+      <span class="hchip">✓ Joining Date & Deadline</span>
+      <span class="hchip">✓ PDF Download Free</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="form-card">
+
+    <!-- Company -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">1</div><div class="ftitle">Company Details</div></div>
+      <div class="fg">
+        <div class="field"><label>Company Name *</label><input id="coName" placeholder="Nexus Technologies Pvt Ltd" type="text"></div>
+        <div class="field"><label>Company Address</label><input id="coAddr" placeholder="501, Tech Park, Bengaluru - 560001" type="text"></div>
+        <div class="field"><label>HR / Signatory Name *</label><input id="hrName" placeholder="Meera Krishnan" type="text"></div>
+        <div class="field"><label>HR Designation</label><input id="hrDesig" placeholder="Head of Human Resources" type="text"></div>
+        <div class="field"><label>Company Email</label><input id="coEmail" placeholder="hr@nexustech.in" type="email"></div>
+        <div class="field"><label>Company Phone</label><input id="coPhone" placeholder="+91 80 4567 8901" type="tel"></div>
+      </div>
+    </div>
+
+    <!-- Candidate -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">2</div><div class="ftitle">Candidate Details</div></div>
+      <div class="fg">
+        <div class="field"><label>Candidate Full Name *</label><input id="candName" placeholder="Arjun Mehta" type="text"></div>
+        <div class="field"><label>Candidate Address</label><input id="candAddr" placeholder="42, Rose Garden, Pune - 411001" type="text"></div>
+        <div class="field"><label>Designation / Role *</label><input id="role" placeholder="Senior Software Engineer" type="text"></div>
+        <div class="field"><label>Department</label><input id="dept" placeholder="Engineering" type="text"></div>
+        <div class="field"><label>Reporting To</label><input id="reportTo" placeholder="Vikram Nair, CTO" type="text"></div>
+        <div class="field"><label>Work Location</label><input id="location" placeholder="Bengaluru (Hybrid)" type="text"></div>
+      </div>
+    </div>
+
+    <!-- Compensation -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">3</div><div class="ftitle">Compensation & Dates</div></div>
+      <div class="fg">
+        <div class="field"><label>Annual CTC (₹) *</label><input id="ctc" placeholder="1200000" type="number"></div>
+        <div class="field"><label>Employment Type</label>
+          <select id="empType">
+            <option value="Full-time, Permanent">Full-time, Permanent</option>
+            <option value="Full-time, Contract">Full-time, Contract</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Internship">Internship</option>
+            <option value="Probation">Probation (6 months)</option>
+          </select>
+        </div>
+        <div class="field"><label>Probation Period</label>
+          <select id="probation">
+            <option value="3 months">3 months</option>
+            <option value="6 months" selected>6 months</option>
+            <option value="No probation">No probation</option>
+          </select>
+        </div>
+        <div class="field"><label>Notice Period</label>
+          <select id="notice">
+            <option value="15 days">15 days</option>
+            <option value="30 days" selected>30 days</option>
+            <option value="60 days">60 days</option>
+            <option value="90 days">90 days</option>
+          </select>
+        </div>
+        <div class="field"><label>Date of Joining *</label><input id="doj" type="date"></div>
+        <div class="field"><label>Offer Valid Until</label><input id="validity" type="date"></div>
+      </div>
+    </div>
+
+    <!-- Perks -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">4</div><div class="ftitle">Benefits & Perks</div></div>
+      <div class="perks-grid" id="perksGrid">
+        <label class="perk-item"><input type="checkbox" checked> Health Insurance</label>
+        <label class="perk-item active"><input type="checkbox" checked> Provident Fund (PF)</label>
+        <label class="perk-item active"><input type="checkbox" checked> Paid Leaves (18/year)</label>
+        <label class="perk-item"><input type="checkbox"> Work From Home</label>
+        <label class="perk-item"><input type="checkbox"> Flexible Working Hours</label>
+        <label class="perk-item"><input type="checkbox"> Laptop Provided</label>
+        <label class="perk-item"><input type="checkbox"> Performance Bonus</label>
+        <label class="perk-item"><input type="checkbox"> Internet Allowance</label>
+        <label class="perk-item"><input type="checkbox"> Food Coupons</label>
+        <label class="perk-item"><input type="checkbox"> Stock Options (ESOP)</label>
+        <label class="perk-item"><input type="checkbox"> Gratuity</label>
+        <label class="perk-item"><input type="checkbox"> Travel Allowance</label>
+      </div>
+    </div>
+
+    <!-- Additional -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">5</div><div class="ftitle">Additional Conditions (Optional)</div></div>
+      <div class="fg" style="grid-template-columns:1fr">
+        <div class="field">
+          <label>Special Conditions / Notes</label>
+          <textarea id="conditions" placeholder="e.g. This offer is subject to successful background verification. Candidate must submit original documents on joining day..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="gen-wrap">
+      <button class="gen-btn" onclick="generateLetter()">📋 Generate Offer Letter</button>
+      <p style="color:rgba(255,255,255,0.3);font-size:0.72rem;text-align:center;margin-top:10px;">Your data stays in your browser. Never uploaded anywhere.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="scard">
+      <h3>✅ What's Included</h3>
+      <div class="slist">
+        <div class="sitem"><div class="sdot">✓</div><div>Company letterhead with all details</div></div>
+        <div class="sitem"><div class="sdot">✓</div><div>Complete compensation breakdown</div></div>
+        <div class="sitem"><div class="sdot">✓</div><div>Joining date and offer validity deadline</div></div>
+        <div class="sitem"><div class="sdot">✓</div><div>Probation period and notice period clauses</div></div>
+        <div class="sitem"><div class="sdot">✓</div><div>Benefits and perks section</div></div>
+        <div class="sitem"><div class="sdot">✓</div><div>Candidate acceptance signature block</div></div>
+        <div class="sitem"><div class="sdot">✓</div><div>Print-ready A4 PDF</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 Legal Tip</strong>
+      An offer letter is not a legally binding employment contract. Always follow it up with a formal Employment Agreement signed by both parties before or on the joining date.
+    </div>
+
+    <div class="scard">
+      <h3>👥 Who Uses This</h3>
+      <div class="slist">
+        <div class="sitem"><div class="sdot">→</div><div>Startups making their first hire</div></div>
+        <div class="sitem"><div class="sdot">→</div><div>Small businesses without HR software</div></div>
+        <div class="sitem"><div class="sdot">→</div><div>Freelance HR consultants</div></div>
+        <div class="sitem"><div class="sdot">→</div><div>Companies hiring for contractual roles</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>⚠️ Important</strong>
+      Always include an offer validity date to create urgency and protect yourself if the candidate takes too long to respond.
+    </div>
+  </div>
+</div>
+
+<!-- PREVIEW -->
+<div id="preview-wrap">
+  <div class="pbar">
+    <h2>📋 Your Offer Letter</h2>
+    <div class="pbtns">
+      <button class="btn-cp" onclick="copyLetter()">📋 Copy Text</button>
+      <button class="btn-dl" onclick="downloadPDF()">⬇️ Download PDF</button>
+    </div>
+  </div>
+  <div class="letter" id="letterContent"></div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-wrap">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is an offer letter legally binding in India? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">An offer letter is generally considered a legally binding document once accepted by the candidate, as it constitutes a basic contract under the Indian Contract Act, 1872. However, it is advisable to follow it up with a detailed Employment Agreement that covers all terms including confidentiality, IP ownership, and termination clauses.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What is CTC vs take-home salary? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">CTC (Cost to Company) is the total amount a company spends on an employee annually, including salary, PF contributions, gratuity, insurance premiums, etc. Take-home (in-hand) salary is what the employee actually receives after all deductions like PF, Professional Tax, TDS. Typically take-home is 70-80% of CTC.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Can I use this for internship offer letters too? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes! Select "Internship" under Employment Type. The generated letter will be appropriately worded for internship positions. You can also set the probation period to "No probation" for internships.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What documents should I ask the candidate to bring on joining? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Standard documents include: Educational certificates (10th, 12th, Graduation), Previous employment offer letters and relieving letters, Last 3 months salary slips, PAN card, Aadhaar card, Passport size photographs, Bank account details, and any professional certifications.</div>
+  </div>
+</div>
+
+<footer>
+  <strong>IndiaTools.in</strong> — Free tools for every Indian<br>
+  <a href="index.html">All Tools</a> · <a href="salary-slip.html">Salary Slip</a> · <a href="legal-notice.html">Legal Notice</a> · <a href="health-insurance-claim.html">Insurance Claim</a><br>
+  © 2024 IndiaTools.in · For informational purposes only.
+</footer>
+
+<script>
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+// Perk checkbox styling
+document.querySelectorAll('.perk-item input').forEach(cb => {
+  cb.addEventListener('change', () => {
+    cb.parentElement.classList.toggle('active', cb.checked);
+  });
+  cb.parentElement.classList.toggle('active', cb.checked);
+});
+
+function fmt(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+function fmtDate(d) { return d ? new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }) : ''; }
+
+function generateLetter() {
+  const req = { coName:'Company Name', candName:'Candidate Name', role:'Designation/Role', doj:'Date of Joining', ctc:'Annual CTC', hrName:'HR/Signatory Name' };
+  for (const [id, label] of Object.entries(req)) {
+    if (!document.getElementById(id).value.trim()) {
+      alert('Please fill in: ' + label);
+      document.getElementById(id).focus();
+      return;
+    }
+  }
+
+  const coName = document.getElementById('coName').value.trim();
+  const coAddr = document.getElementById('coAddr').value.trim();
+  const coEmail = document.getElementById('coEmail').value.trim();
+  const coPhone = document.getElementById('coPhone').value.trim();
+  const hrName = document.getElementById('hrName').value.trim();
+  const hrDesig = document.getElementById('hrDesig').value.trim();
+  const candName = document.getElementById('candName').value.trim();
+  const candAddr = document.getElementById('candAddr').value.trim();
+  const role = document.getElementById('role').value.trim();
+  const dept = document.getElementById('dept').value.trim();
+  const reportTo = document.getElementById('reportTo').value.trim();
+  const location = document.getElementById('location').value.trim();
+  const ctc = document.getElementById('ctc').value.trim();
+  const empType = document.getElementById('empType').value;
+  const probation = document.getElementById('probation').value;
+  const notice = document.getElementById('notice').value;
+  const doj = document.getElementById('doj').value;
+  const validity = document.getElementById('validity').value;
+  const conditions = document.getElementById('conditions').value.trim();
+
+  const monthlyCtc = Math.round(parseInt(ctc) / 12);
+  const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+  const refNo = `${coName.substring(0,3).toUpperCase()}/OL/${new Date().getFullYear()}/${Math.floor(Math.random()*9000+1000)}`;
+
+  // Perks
+  const selectedPerks = [];
+  document.querySelectorAll('.perk-item input:checked').forEach(cb => {
+    selectedPerks.push(cb.parentElement.textContent.trim());
+  });
+
+  const letter = document.getElementById('letterContent');
+  letter.innerHTML = `
+    <div class="letter-head">
+      <div>
+        <div class="lco-name">${coName}</div>
+        <div class="lco-addr">${coAddr}${coEmail ? ' · ' + coEmail : ''}${coPhone ? ' · ' + coPhone : ''}</div>
+      </div>
+      <div class="lco-ref">
+        <strong>OFFER LETTER</strong>
+        Ref: ${refNo}<br>
+        Date: ${today}
+      </div>
+    </div>
+
+    <div class="letter-body">
+      <div class="date">Date: ${today}</div>
+      <div class="candidate">
+        <strong>${candName}</strong><br>
+        ${candAddr}
+      </div>
+
+      <div class="subject">Subject: Offer of Employment — ${role}${dept ? ', ' + dept : ''}</div>
+
+      <p>Dear <strong>${candName}</strong>,</p>
+
+      <p>We are delighted to extend this offer of employment to you at <strong>${coName}</strong>. Following our recent interactions and evaluation process, we are pleased to confirm your selection for the position of <strong>${role}</strong>${dept ? ' in the ' + dept + ' department' : ''}${location ? ' based out of ' + location : ''}.</p>
+
+      <table class="offer-table">
+        <tr><th>Detail</th><th>Information</th></tr>
+        <tr><td>Designation</td><td class="highlight">${role}</td></tr>
+        ${dept ? `<tr><td>Department</td><td>${dept}</td></tr>` : ''}
+        ${location ? `<tr><td>Work Location</td><td>${location}</td></tr>` : ''}
+        ${reportTo ? `<tr><td>Reporting To</td><td>${reportTo}</td></tr>` : ''}
+        <tr><td>Employment Type</td><td>${empType}</td></tr>
+        <tr><td>Date of Joining</td><td class="highlight">${fmtDate(doj)}</td></tr>
+        <tr><td>Annual CTC</td><td class="highlight">${fmt(ctc)} per annum</td></tr>
+        <tr><td>Monthly Gross (approx.)</td><td>${fmt(monthlyCtc)} per month</td></tr>
+        ${probation !== 'No probation' ? `<tr><td>Probation Period</td><td>${probation}</td></tr>` : ''}
+        <tr><td>Notice Period</td><td>${notice}</td></tr>
+        ${validity ? `<tr><td>Offer Valid Until</td><td style="color:#dc2626;font-weight:600">${fmtDate(validity)}</td></tr>` : ''}
+      </table>
+
+      ${selectedPerks.length > 0 ? `
+      <div class="perks-section">
+        <h4>Benefits & Perks</h4>
+        <div class="perks-list">
+          ${selectedPerks.map(p => `<span class="perk-tag">${p}</span>`).join('')}
+        </div>
+      </div>` : ''}
+
+      <p>The above CTC is inclusive of all allowances, statutory contributions, and other benefits as per company policy. A detailed breakup of your compensation structure will be provided by the HR team.</p>
+
+      ${probation !== 'No probation' ? `<p>Your employment will commence with a probationary period of <strong>${probation}</strong>, during which your performance will be evaluated. Upon successful completion, you will be confirmed as a permanent employee.</p>` : ''}
+
+      <p>This offer is subject to satisfactory completion of our background and reference verification process. You will be required to submit all original educational and experience certificates on your date of joining.</p>
+
+      ${conditions ? `<p><strong>Additional Conditions:</strong> ${conditions}</p>` : ''}
+
+      <p>Please confirm your acceptance of this offer by signing and returning a copy of this letter${validity ? ' before ' + fmtDate(validity) : ''}. We look forward to welcoming you to the ${coName} family.</p>
+
+      <p>Should you have any queries, please feel free to reach out to us at ${coEmail || 'the HR department'}.</p>
+
+      <p>Congratulations and welcome aboard!</p>
+    </div>
+
+    <div class="letter-sign">
+      <div class="sign-block">
+        <div class="sign-line"></div>
+        <div class="sign-label">${hrName}</div>
+        <div style="color:#999;margin-top:2px;font-size:0.72rem">${hrDesig || 'Authorised Signatory'}</div>
+        <div style="color:#999;margin-top:1px;font-size:0.72rem">${coName}</div>
+      </div>
+      <div class="accept-block">
+        <strong>Candidate Acceptance</strong>
+        I, ${candName}, hereby accept this offer of employment on the terms and conditions stated above.<br><br>
+        Signature: ____________________<br>
+        Date: ____________________
+      </div>
+    </div>
+  `;
+
+  window._letterText = letter.innerText;
+  window._candName = candName;
+  window._coName = coName;
+
+  const pw = document.getElementById('preview-wrap');
+  pw.style.display = 'block';
+  pw.classList.add('fade-up');
+  pw.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyLetter() {
+  navigator.clipboard.writeText(window._letterText || '').then(() => {
+    const btn = document.querySelector('.btn-cp');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Text', 2000);
+  });
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+
+  doc.setFillColor(13, 13, 15);
+  doc.rect(0, 0, 210, 30, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
+  doc.text(window._coName || 'Company', 15, 13);
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(180, 170, 160);
+  doc.text('OFFER LETTER', 195, 10, { align: 'right' });
+  doc.setTextColor(247, 162, 106);
+  doc.setFontSize(10);
+  doc.text(`To: ${window._candName || 'Candidate'}`, 15, 22);
+
+  const text = window._letterText || '';
+  const lines = doc.splitTextToSize(text, 170);
+  let y = 40;
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(30, 30, 30);
+
+  lines.forEach(line => {
+    if (y > 272) { doc.addPage(); y = 20; }
+    doc.text(line, 15, y);
+    y += 5.5;
+  });
+
+  doc.save(`Offer_Letter_${(window._candName || 'candidate').replace(/ /g,'_')}.pdf`);
+}
+</script>
+</body>
+</html>
