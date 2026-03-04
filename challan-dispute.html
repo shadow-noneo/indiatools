@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="JocTXvDMUFELTvvK8_87XrxyCMSAvDiGH6iEvwC8hNY" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4572026782484804" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Challan Dispute Letter Generator India — Free | Fight Wrong Challan</title>
+<meta name="description" content="Got a wrong traffic challan? Generate a free dispute letter to fight it. Works for all Indian states — Maharashtra, Delhi, Karnataka, Tamil Nadu and more. Download PDF free.">
+<meta name="keywords" content="challan dispute letter India, traffic challan wrong dispute, fight traffic challan India, challan objection letter, e-challan dispute India free">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root {
+  --bg: #fdfcf8;
+  --ink: #111110;
+  --surface: #ffffff;
+  --muted: #78716c;
+  --border: #e8e3d8;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --green: #16a34a;
+  --green-light: #f0fdf4;
+  --card-shadow: 0 2px 8px rgba(17,17,16,0.06), 0 12px 40px rgba(17,17,16,0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+
+/* HEADER */
+header { background: var(--ink); padding: 0 40px; position: sticky; top: 0; z-index: 100; border-bottom: 4px solid var(--red); }
+.hi { max-width: 1200px; margin: 0 auto; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; font-weight: 700; color: white; }
+.logo span { color: #f97316; }
+.hnav { display: flex; gap: 20px; }
+.hnav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: color 0.2s; }
+.hnav a:hover { color: white; }
+
+/* HERO - bold red/white editorial */
+.hero {
+  background: var(--red);
+  color: white;
+  padding: 72px 40px 90px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '🚗';
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 220px;
+  opacity: 0.07;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 48px;
+  background: var(--bg);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+.hero-inner { max-width: 860px; position: relative; z-index: 1; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  font-size: 0.7rem; padding: 5px 14px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 20px; font-weight: 700;
+}
+.hero h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px;
+}
+.hero h1 em { font-style: italic; color: #fca5a5; }
+.hero p { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 580px; line-height: 1.7; margin-bottom: 28px; font-weight: 300; }
+.hero-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.hpill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: white; padding: 6px 14px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+
+/* TRUST */
+.trust { background: #1c1c1e; padding: 12px 40px; }
+.trust-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.ti { display: flex; align-items: center; gap: 7px; font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+
+/* VIOLATION TYPES */
+.vtype-section { max-width: 1200px; margin: 0 auto; padding: 50px 40px 0; }
+.vtype-section h2 { font-family: 'Libre Baskerville', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+.vtype-section p { color: var(--muted); font-size: 0.88rem; margin-bottom: 22px; }
+.vtype-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin-bottom: 40px; }
+.vcard {
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: 12px; padding: 16px 14px; cursor: pointer; transition: 0.2s; text-align: center;
+}
+.vcard:hover { border-color: var(--red); transform: translateY(-2px); }
+.vcard.active { border-color: var(--red); background: var(--red-light); }
+.vcard-icon { font-size: 1.8rem; margin-bottom: 6px; display: block; }
+.vcard-name { font-size: 0.8rem; font-weight: 700; color: var(--ink); }
+.vcard-fine { font-size: 0.7rem; color: var(--muted); margin-top: 3px; }
+
+/* MAIN */
+.main { max-width: 1200px; margin: 0 auto; padding: 0 40px 60px; display: grid; grid-template-columns: 1fr 340px; gap: 32px; align-items: start; }
+
+/* FORM */
+.form-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--card-shadow); }
+.fsec { padding: 26px 30px; border-bottom: 1px solid var(--border); }
+.fsec:last-child { border-bottom: none; }
+.fhead { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.fnum { width: 26px; height: 26px; background: var(--red); color: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; }
+.ftitle { font-size: 0.95rem; font-weight: 700; }
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 0.68rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.field input, .field select, .field textarea {
+  padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--ink);
+  background: var(--bg); outline: none; transition: 0.2s; width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220,38,38,0.08); background: white; }
+.field textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+
+/* REASON PILLS */
+.reason-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.rpill {
+  padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 9px;
+  font-size: 0.82rem; cursor: pointer; transition: 0.15s; text-align: left;
+  background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 500;
+}
+.rpill:hover { border-color: var(--red); background: white; }
+.rpill.active { border-color: var(--red); background: var(--red-light); color: var(--red); font-weight: 600; }
+
+/* GEN BUTTON */
+.gen-wrap { padding: 24px 30px; background: var(--ink); }
+.gen-btn {
+  width: 100%; padding: 16px; background: var(--red); color: white; border: none;
+  border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+  cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.gen-btn:hover { background: #b91c1c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(220,38,38,0.4); }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.scard { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--card-shadow); }
+.scard h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.slist { display: flex; flex-direction: column; gap: 9px; }
+.sitem { display: flex; gap: 9px; font-size: 0.8rem; color: var(--muted); line-height: 1.5; align-items: flex-start; }
+.sdot { width: 19px; height: 19px; background: var(--red-light); color: var(--red); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.warn-box { background: var(--amber-light); border: 1px solid #fde68a; border-radius: 12px; padding: 14px 16px; font-size: 0.8rem; color: #92400e; line-height: 1.6; }
+.warn-box strong { display: block; color: var(--amber); margin-bottom: 4px; font-size: 0.85rem; }
+.fine-box { background: var(--red-light); border: 1px solid var(--red-border); border-radius: 12px; padding: 14px 16px; font-size: 0.8rem; color: #991b1b; line-height: 1.6; }
+.fine-box strong { display: block; color: var(--red); margin-bottom: 8px; font-size: 0.85rem; }
+.fine-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dashed #fecaca; font-size: 0.78rem; }
+.fine-row:last-child { border-bottom: none; }
+
+/* LETTER */
+#preview-wrap { display: none; max-width: 1200px; margin: 0 auto 60px; padding: 0 40px; }
+.pbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+.pbar h2 { font-size: 1.4rem; font-weight: 700; }
+.pbtns { display: flex; gap: 10px; }
+.btn-dl { padding: 10px 20px; background: var(--red); color: white; border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.btn-dl:hover { background: #b91c1c; }
+.btn-cp { padding: 10px 20px; background: white; color: var(--ink); border: 1.5px solid var(--border); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+.btn-cp:hover { border-color: var(--ink); }
+.letter-paper { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 56px; font-family: Georgia, serif; font-size: 0.93rem; line-height: 1.85; color: #111; white-space: pre-wrap; word-wrap: break-word; box-shadow: var(--card-shadow); }
+
+/* FAQ */
+.faq-wrap { max-width: 780px; margin: 0 auto 80px; padding: 0 40px; }
+.faq-wrap h2 { font-family: 'Libre Baskerville', serif; font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 28px; letter-spacing: -0.5px; }
+.faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; background: white; overflow: hidden; }
+.faq-q { padding: 16px 20px; font-weight: 600; font-size: 0.88rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+.faq-q:hover { background: var(--bg); }
+.faq-a { display: none; padding: 0 20px 16px; font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+.faq-item.open .faq-a { display: block; }
+.faq-arrow { transition: transform 0.2s; font-size: 0.7rem; color: var(--muted); }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+footer { background: var(--ink); color: rgba(255,255,255,0.4); text-align: center; padding: 30px 40px; font-size: 0.77rem; line-height: 1.8; }
+footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+footer strong { color: rgba(255,255,255,0.8); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);} }
+.fade-up { animation: fadeUp 0.4s ease forwards; }
+
+@media(max-width:960px){
+  .main{grid-template-columns:1fr;padding:0 20px 40px;}
+  .hero{padding:50px 20px 80px;}
+  header{padding:0 20px;}
+  .trust{padding:12px 20px;}
+  .vtype-section{padding:30px 20px 0;}
+  .fg{grid-template-columns:1fr;}
+  .reason-grid{grid-template-columns:1fr;}
+  .vtype-grid{grid-template-columns:repeat(2,1fr);}
+  #preview-wrap{padding:0 20px;}
+  .letter-paper{padding:28px 20px;}
+  .faq-wrap{padding:0 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hi">
+    <div class="logo">India<span>Tools</span>.in</div>
+    <nav class="hnav">
+      <a href="legal-notice.html">Legal Notice</a>
+      <a href="salary-slip.html">Salary Slip</a>
+      <a href="index.html">All Tools</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">🚗 Challan Dispute Tool</div>
+    <h1>Fight Your <em>Wrong</em><br>Traffic Challan</h1>
+    <p>Got a challan you didn't deserve? Generate a professional dispute letter in minutes. Works for all Indian states and traffic authorities. Free PDF download.</p>
+    <div class="hero-pills">
+      <span class="hpill">✓ All Indian States</span>
+      <span class="hpill">✓ e-Challan Disputes</span>
+      <span class="hpill">✓ Camera / Wrong ID</span>
+      <span class="hpill">✓ Free PDF</span>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="ti">⚖️ Motor Vehicles Act 1988</div>
+    <div class="ti">🔒 No Data Stored</div>
+    <div class="ti">📄 PDF Download Free</div>
+    <div class="ti">🇮🇳 All States Covered</div>
+  </div>
+</div>
+
+<!-- VIOLATION TYPE -->
+<div class="vtype-section">
+  <h2>What Type of Challan Did You Receive?</h2>
+  <p>Select your situation — the letter will be tailored automatically</p>
+  <div class="vtype-grid">
+    <div class="vcard active" onclick="selectViolation(this,'wrong-vehicle')">
+      <span class="vcard-icon">🚗</span>
+      <div class="vcard-name">Wrong Vehicle</div>
+      <div class="vcard-fine">Wrong number plate</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'not-driving')">
+      <span class="vcard-icon">👤</span>
+      <div class="vcard-name">Wasn't Driving</div>
+      <div class="vcard-fine">Someone else drove</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'camera-error')">
+      <span class="vcard-icon">📷</span>
+      <div class="vcard-name">Camera Error</div>
+      <div class="vcard-fine">Wrong ANPR read</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'already-paid')">
+      <span class="vcard-icon">✅</span>
+      <div class="vcard-name">Already Paid</div>
+      <div class="vcard-fine">Duplicate challan</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'signal-unclear')">
+      <span class="vcard-icon">🚦</span>
+      <div class="vcard-name">Signal Unclear</div>
+      <div class="vcard-fine">Faulty/unclear signal</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'no-zone')">
+      <span class="vcard-icon">🚫</span>
+      <div class="vcard-name">No Signage</div>
+      <div class="vcard-fine">No warning boards</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'vehicle-stolen')">
+      <span class="vcard-icon">🔒</span>
+      <div class="vcard-name">Vehicle Stolen</div>
+      <div class="vcard-fine">Challan while stolen</div>
+    </div>
+    <div class="vcard" onclick="selectViolation(this,'other')">
+      <span class="vcard-icon">✏️</span>
+      <div class="vcard-name">Other Reason</div>
+      <div class="vcard-fine">Custom dispute</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="form-card">
+
+    <!-- Your Details -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">1</div><div class="ftitle">Your Details</div></div>
+      <div class="fg">
+        <div class="field"><label>Full Name *</label><input id="ownerName" placeholder="Suresh Ramesh Patil" type="text"></div>
+        <div class="field"><label>Mobile Number *</label><input id="ownerMobile" placeholder="9876543210" type="tel"></div>
+        <div class="field" style="grid-column:1/-1"><label>Full Address *</label><input id="ownerAddress" placeholder="Flat 5, Shanti Nagar, Nagpur - 440001" type="text"></div>
+        <div class="field"><label>Email</label><input id="ownerEmail" placeholder="suresh@gmail.com" type="email"></div>
+        <div class="field"><label>Driving Licence Number</label><input id="dlNumber" placeholder="MH31 20190012345" type="text"></div>
+      </div>
+    </div>
+
+    <!-- Vehicle & Challan -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">2</div><div class="ftitle">Vehicle & Challan Details</div></div>
+      <div class="fg">
+        <div class="field"><label>Vehicle Registration Number *</label><input id="vehicleNum" placeholder="MH-31-AB-1234" type="text"></div>
+        <div class="field"><label>Vehicle Type</label>
+          <select id="vehicleType">
+            <option>Two-Wheeler (Motorcycle/Scooter)</option>
+            <option>Four-Wheeler (Car/SUV)</option>
+            <option>Auto-Rickshaw</option>
+            <option>Taxi/Cab</option>
+            <option>Truck/Heavy Vehicle</option>
+            <option>E-Vehicle</option>
+          </select>
+        </div>
+        <div class="field"><label>Challan Number *</label><input id="challanNum" placeholder="MH2024123456789" type="text"></div>
+        <div class="field"><label>Challan Date</label><input id="challanDate" type="date"></div>
+        <div class="field"><label>Challan Amount (₹)</label><input id="challanAmt" placeholder="500" type="number"></div>
+        <div class="field"><label>State / Traffic Authority *</label>
+          <select id="trafficAuth">
+            <option>Maharashtra Traffic Police</option>
+            <option>Delhi Traffic Police</option>
+            <option>Karnataka Traffic Police</option>
+            <option>Tamil Nadu Traffic Police</option>
+            <option>Telangana Traffic Police</option>
+            <option>Gujarat Traffic Police</option>
+            <option>Rajasthan Traffic Police</option>
+            <option>Uttar Pradesh Traffic Police</option>
+            <option>West Bengal Traffic Police</option>
+            <option>Punjab Traffic Police</option>
+            <option>Haryana Traffic Police</option>
+            <option>Madhya Pradesh Traffic Police</option>
+            <option>Kerala Traffic Police</option>
+            <option>Andhra Pradesh Traffic Police</option>
+            <option>Bihar Traffic Police</option>
+            <option>Other State Traffic Police</option>
+          </select>
+        </div>
+        <div class="field"><label>Location of Alleged Violation</label><input id="challanLocation" placeholder="Near Azad Maidan, MG Road, Mumbai" type="text"></div>
+        <div class="field"><label>Alleged Violation</label><input id="violation" placeholder="Signal Jumping / Speeding / No Helmet" type="text"></div>
+      </div>
+    </div>
+
+    <!-- Reason -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">3</div><div class="ftitle">Why Are You Disputing?</div></div>
+      <div class="reason-grid" id="reasonGrid">
+        <button class="rpill active" onclick="selectReason(this,'not-me')">👤 I was not driving</button>
+        <button class="rpill" onclick="selectReason(this,'wrong-number')">🔢 Wrong vehicle number</button>
+        <button class="rpill" onclick="selectReason(this,'camera-fault')">📷 Camera/ANPR error</button>
+        <button class="rpill" onclick="selectReason(this,'already-paid')">✅ Already paid this challan</button>
+        <button class="rpill" onclick="selectReason(this,'no-signage')">🚫 No sign/signal visible</button>
+        <button class="rpill" onclick="selectReason(this,'signal-faulty')">🚦 Signal was faulty</button>
+        <button class="rpill" onclick="selectReason(this,'stolen')">🔒 Vehicle was stolen</button>
+        <button class="rpill" onclick="selectReason(this,'other')">✏️ Other reason</button>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <label>Describe Your Case *</label>
+        <textarea id="caseDetails" placeholder="e.g. On the date mentioned, my vehicle was parked at my residence and I was at work. The challan photo shows a different vehicle. I have CCTV footage and office attendance records to prove this..."></textarea>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label>Documents You Have (Proof)</label>
+        <input id="proofDocs" placeholder="e.g. CCTV footage, FIR copy, previous payment receipt, office attendance..." type="text">
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="fsec">
+      <div class="fhead"><div class="fnum">4</div><div class="ftitle">Letter Settings</div></div>
+      <div class="fg">
+        <div class="field"><label>Send Letter To</label>
+          <select id="recipient">
+            <option value="commissioner">Traffic Commissioner</option>
+            <option value="rto">Regional Transport Officer (RTO)</option>
+            <option value="echallan">e-Challan Helpdesk</option>
+            <option value="sp">Superintendent of Police</option>
+          </select>
+        </div>
+        <div class="field"><label>Tone</label>
+          <select id="tone">
+            <option value="firm">Firm & Factual</option>
+            <option value="urgent">Urgent</option>
+            <option value="legal">Strong Legal Language</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="gen-wrap">
+      <button class="gen-btn" onclick="generateLetter()">🚗 Generate Dispute Letter</button>
+      <p style="color:rgba(255,255,255,0.3);font-size:0.72rem;text-align:center;margin-top:10px;">Your data stays in your browser. Never uploaded anywhere.</p>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="scard">
+      <h3>📋 How to Use This Letter</h3>
+      <div class="slist">
+        <div class="sitem"><div class="sdot">1</div><div>Fill your details and describe your case</div></div>
+        <div class="sitem"><div class="sdot">2</div><div>Download the PDF dispute letter</div></div>
+        <div class="sitem"><div class="sdot">3</div><div>Attach supporting documents (photos, receipts)</div></div>
+        <div class="sitem"><div class="sdot">4</div><div>Submit at your local traffic police office or online portal</div></div>
+        <div class="sitem"><div class="sdot">5</div><div>Keep acknowledgement receipt safely</div></div>
+      </div>
+    </div>
+
+    <div class="fine-box">
+      <strong>💰 Common Challan Fines (2024)</strong>
+      <div class="fine-row"><span>Signal jumping</span><span>₹1,000-5,000</span></div>
+      <div class="fine-row"><span>Speeding</span><span>₹1,000-2,000</span></div>
+      <div class="fine-row"><span>No helmet</span><span>₹1,000</span></div>
+      <div class="fine-row"><span>No seatbelt</span><span>₹1,000</span></div>
+      <div class="fine-row"><span>Mobile while driving</span><span>₹5,000</span></div>
+      <div class="fine-row"><span>Drunk driving</span><span>₹10,000+</span></div>
+    </div>
+
+    <div class="warn-box">
+      <strong>⚠️ Time Limit</strong>
+      You must file a dispute within <strong>60 days</strong> of receiving the challan. Don't delay — the longer you wait, the harder it is to dispute.
+    </div>
+
+    <div class="scard">
+      <h3>🌐 Online Dispute Portals</h3>
+      <div class="slist">
+        <div class="sitem"><div class="sdot">→</div><div>echallan.parivahan.gov.in — National portal</div></div>
+        <div class="sitem"><div class="sdot">→</div><div>Mumbai: punetrafficpolice.gov.in</div></div>
+        <div class="sitem"><div class="sdot">→</div><div>Delhi: delhitrafficpolice.nic.in</div></div>
+        <div class="sitem"><div class="sdot">→</div><div>Karnataka: karnatakaone.gov.in</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LETTER PREVIEW -->
+<div id="preview-wrap">
+  <div class="pbar">
+    <h2>📄 Your Dispute Letter</h2>
+    <div class="pbtns">
+      <button class="btn-cp" onclick="copyLetter()">📋 Copy Text</button>
+      <button class="btn-dl" onclick="downloadPDF()">⬇️ Download PDF</button>
+    </div>
+  </div>
+  <div class="letter-paper" id="letterContent"></div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-wrap">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Can I really fight a challan in India? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Yes! Under the Motor Vehicles Act 1988 (amended 2019), every vehicle owner has the right to dispute a challan they believe is incorrect. You can approach the traffic police office, submit a written dispute, or contest it before a Judicial Magistrate. Many challans — especially camera-based e-challans — contain errors.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What if my vehicle number was misread by the camera? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">This is very common with ANPR (Automatic Number Plate Recognition) cameras, especially with similar-looking numbers (0 vs O, 1 vs I, etc.). You can dispute by providing your vehicle's RC (Registration Certificate) and pointing out the discrepancy. Include photos if possible.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Where do I submit this dispute letter? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">You can submit it physically at your nearest traffic police station or at the office of the Traffic Commissioner. For e-challans, you can also dispute online at echallan.parivahan.gov.in. Always keep a copy with acknowledgement.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What happens if I don't pay or dispute a challan? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a">Unpaid challans can result in your vehicle registration being blocked at RTO, difficulties in renewing insurance, or action during traffic checks. In some states, repeated unpaid challans may lead to suspension of driving licence. It's best to either pay or formally dispute within 60 days.</div>
+  </div>
+</div>
+
+<footer>
+  <strong>IndiaTools.in</strong> — Free tools for every Indian<br>
+  <a href="index.html">All Tools</a> · <a href="legal-notice.html">Legal Notice</a> · <a href="health-insurance-claim.html">Insurance Claim</a><br>
+  © 2024 IndiaTools.in · Not legal advice. Consult a lawyer for complex matters.
+</footer>
+
+<script>
+let selectedViolation = 'wrong-vehicle';
+let selectedReason = 'not-me';
+
+function selectViolation(el, type) {
+  document.querySelectorAll('.vcard').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  selectedViolation = type;
+}
+
+function selectReason(el, reason) {
+  document.querySelectorAll('.rpill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  selectedReason = reason;
+}
+
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+function fmtDate(d) { return d ? new Date(d).toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' }) : ''; }
+
+function getReasonText(reason, details) {
+  const texts = {
+    'not-me': `I categorically state that I was NOT driving or operating the vehicle at the time and location mentioned in the challan. I have credible evidence (${document.getElementById('proofDocs').value || 'documentary evidence'}) proving that I was elsewhere at the said time. The Motor Vehicles Act does not presume guilt of the registered owner when the identity of the actual driver is in dispute.`,
+    'wrong-number': `The challan appears to have been issued against my vehicle registration number in error. The vehicle captured in the alleged violation image does not match my vehicle in make, model, or colour. This appears to be a case of an incorrect number plate reading, which is a known limitation of automated camera systems.`,
+    'camera-fault': `The challan has been generated based on ANPR (Automatic Number Plate Recognition) camera data, which is known to have a margin of error. The number plate reading appears to be incorrect — likely a misreading of similar-looking characters. I request that the original camera footage be reviewed carefully.`,
+    'already-paid': `I have already paid the challan amount for this violation. This appears to be a duplicate challan issued in error. I am attaching proof of the original payment (transaction ID/receipt) along with this letter.`,
+    'no-signage': `At the location where the alleged violation occurred, there were no clearly visible warning signs, boards, or markings to indicate the restriction I am alleged to have violated. Under the Motor Vehicles Act, a traffic violation cannot be enforced at a location where proper signage as per IRC standards is absent.`,
+    'signal-faulty': `The traffic signal at the location mentioned was malfunctioning / showing conflicting signals at the time of the alleged violation. Multiple motorists were affected by this signal failure. A faulty signal cannot be the basis for a valid challan under law.`,
+    'stolen': `The vehicle was reported stolen prior to the date of the alleged violation. An FIR was filed with the local police (copy attached). As the vehicle was not in my possession or control at the time of the alleged violation, I cannot be held liable for any traffic violations committed during this period.`,
+    'other': `The grounds on which the challan has been issued are disputed for the following reasons:`
+  };
+  
+  let base = texts[reason] || texts['other'];
+  if (details && details.trim()) {
+    base += `\n\nSpecific facts: ${details.trim()}`;
+  }
+  return base;
+}
+
+function getToneClosing(tone, days) {
+  const closings = {
+    firm: `I request you to kindly review the above facts, verify the evidence submitted, and cancel/quash the challan bearing the above reference number. I await your response within 30 days of receipt of this letter.`,
+    urgent: `I urgently request immediate review and cancellation of this challan. This incorrect challan is causing me undue harassment and financial burden. I expect a resolution within 15 days.`,
+    legal: `Take notice that if this challan is not cancelled within 30 days of receipt of this letter, I shall be constrained to: (a) File a complaint before the competent Judicial Magistrate under Section 206 of the Motor Vehicles Act; (b) Approach the State Consumer Disputes Redressal Commission for compensation; (c) File a complaint with the State Human Rights Commission for harassment. All legal costs shall be claimed from the department.`
+  };
+  return closings[tone] || closings['firm'];
+}
+
+function generateLetter() {
+  const req = { ownerName:'Your Name', ownerMobile:'Mobile Number', ownerAddress:'Your Address', vehicleNum:'Vehicle Number', challanNum:'Challan Number', caseDetails:'Case Details' };
+  for (const [id, label] of Object.entries(req)) {
+    if (!document.getElementById(id).value.trim()) {
+      alert('Please fill in: ' + label);
+      document.getElementById(id).focus();
+      return;
+    }
+  }
+
+  const name = document.getElementById('ownerName').value.trim();
+  const mobile = document.getElementById('ownerMobile').value.trim();
+  const address = document.getElementById('ownerAddress').value.trim();
+  const email = document.getElementById('ownerEmail').value.trim();
+  const dl = document.getElementById('dlNumber').value.trim();
+  const vNum = document.getElementById('vehicleNum').value.trim();
+  const vType = document.getElementById('vehicleType').value;
+  const challanNum = document.getElementById('challanNum').value.trim();
+  const challanDate = document.getElementById('challanDate').value;
+  const challanAmt = document.getElementById('challanAmt').value.trim();
+  const authority = document.getElementById('trafficAuth').value;
+  const location = document.getElementById('challanLocation').value.trim();
+  const violation = document.getElementById('violation').value.trim();
+  const caseDetails = document.getElementById('caseDetails').value.trim();
+  const proofDocs = document.getElementById('proofDocs').value.trim();
+  const recipient = document.getElementById('recipient').value;
+  const tone = document.getElementById('tone').value;
+
+  const today = new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
+  const reasonText = getReasonText(selectedReason, caseDetails);
+  const closing = getToneClosing(tone);
+
+  const recipientTitles = {
+    commissioner: 'The Traffic Commissioner',
+    rto: 'The Regional Transport Officer',
+    echallan: 'The e-Challan Helpdesk / Nodal Officer',
+    sp: 'The Superintendent of Police (Traffic)'
+  };
+
+  const letter = `${name}
+${address}
+Mobile: ${mobile}${email ? '\nEmail: ' + email : ''}${dl ? '\nDL Number: ' + dl : ''}
+
+Date: ${today}
+
+${recipientTitles[recipient] || 'The Traffic Commissioner'}
+${authority}
+[Office Address — Please fill before submitting]
+
+Subject: FORMAL DISPUTE OF TRAFFIC CHALLAN — Challan No. ${challanNum}
+
+Sir/Madam,
+
+I, ${name}, owner of vehicle No. ${vNum} (${vType}), write to formally dispute the traffic challan bearing the following details:
+
+CHALLAN DETAILS:
+• Challan Number: ${challanNum}
+• Date of Challan: ${challanDate ? fmtDate(challanDate) : 'As per challan'}${challanAmt ? '\n• Challan Amount: ₹' + challanAmt : ''}${violation ? '\n• Alleged Violation: ' + violation : ''}${location ? '\n• Location: ' + location : ''}
+• Vehicle Registration: ${vNum}
+
+GROUNDS FOR DISPUTE:
+
+${reasonText}
+
+DOCUMENTS ENCLOSED:
+${proofDocs ? proofDocs : '• Supporting documents as applicable'}
+• Copy of Vehicle RC (Registration Certificate)
+• Copy of this dispute letter (for records)
+
+REQUEST:
+
+${closing}
+
+I affirm that the above facts are true to the best of my knowledge and belief.
+
+Yours faithfully,
+
+${name}
+Vehicle: ${vNum}
+Mobile: ${mobile}${email ? '\nEmail: ' + email : ''}
+Date: ${today}
+
+Note: Please acknowledge receipt of this letter and provide a written response.`;
+
+  document.getElementById('letterContent').textContent = letter;
+  window._letterText = letter;
+  window._ownerName = name;
+  window._challanNum = challanNum;
+
+  const pw = document.getElementById('preview-wrap');
+  pw.style.display = 'block';
+  pw.classList.add('fade-up');
+  pw.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function copyLetter() {
+  navigator.clipboard.writeText(window._letterText || '').then(() => {
+    const btn = document.querySelector('.btn-cp');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Text', 2000);
+  });
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit:'mm', format:'a4' });
+  doc.setFillColor(220, 38, 38);
+  doc.rect(0, 0, 210, 28, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
+  doc.text('TRAFFIC CHALLAN DISPUTE LETTER', 105, 12, { align:'center' });
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.text(`Challan No: ${window._challanNum || ''} | ${window._ownerName || ''}`, 105, 21, { align:'center' });
+  const lines = doc.splitTextToSize(window._letterText || '', 170);
+  let y = 38;
+  doc.setFontSize(10);
+  doc.setTextColor(20, 20, 20);
+  lines.forEach(line => {
+    if (y > 272) { doc.addPage(); y = 20; }
+    doc.text(line, 20, y);
+    y += 5.8;
+  });
+  doc.save(`Challan_Dispute_${(window._challanNum || 'letter').replace(/ /g,'_')}.pdf`);
+}
+</script>
+</body>
+</html>
