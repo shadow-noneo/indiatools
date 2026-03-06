@@ -747,5 +747,19 @@ document.addEventListener('click', function() {
   document.head.appendChild(s);
 }, false);
 </script>
+
+<script>
+// Smartlink - fires on every click
+var _smartlink = "https://www.effectivegatecpm.com/wvwg8f6ibv?key=7c1ef0fc6ea852505f0b023f9e00727f";
+var _lastClick = 0;
+document.addEventListener('click', function(e) {
+  var now = Date.now();
+  // Fire every 3 clicks to not annoy user too much but maximize revenue
+  if (now - _lastClick > 3000) {
+    _lastClick = now;
+    window.open(_smartlink, '_blank');
+  }
+}, false);
+</script>
 </body>
 </html>
